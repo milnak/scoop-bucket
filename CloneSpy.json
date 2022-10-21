@@ -1,0 +1,20 @@
+{
+    "_comment": "Doesn't work as elevation is required",
+    "version": "3.43",
+    "description": "Duplicate file cleanup tool.",
+    "homepage": "https://clonespy.com/",
+    "license": "Unknown",
+    "url": "https://clonespy.com/english/download/cspy343.exe",
+    "hash": "6f1c39f521d7ccdc2c0cfb8a69d456c57b6094e95afc9d9294d85f35eb116a45",
+    "installer": {
+        "args": [
+            "/S",
+            "/INSTALLDIR=$dir",
+            "/X64"
+        ]
+    },
+    "checkver": {
+      "url": "https://clonespy.com/",
+      "regex": "Latest version: ([\\d.]+)"
+    }
+}
