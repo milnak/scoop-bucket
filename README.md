@@ -1,23 +1,37 @@
 # Milnak's Scoop Bucket
 
-## Usage
-
-Add bucket:
+## Add bucket
 
 `scoop bucket add milnak https://github.com/milnak/scoop-bucket`
 
-Check that it works:
+## Check that it works
 
 `scoop bucket list`
 
-Search for app:
+Should see something like:
+
+```text
+Name         Source                                         Updated               Manifests
+----         ------                                         -------               ---------
+milnak       https://github.com/milnak/scoop-bucket         2/1/2024 11:43:26 AM          0
+```
+
+## Search for app
 
 `scoop search clonespy`
 
-Install app:
+Should see something like:
 
-`scoop install clonespy`
+```text
+Name     Version Source Binaries
+----     ------- ------ --------
+CloneSpy 3.43    milnak
+```
 
-Run app:
+## Install app
 
-`clonespy`
+`scoop install milnak/clonespy`
+
+## Run app
+
+`CloneSpy64.exe`
