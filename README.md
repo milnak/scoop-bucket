@@ -4,7 +4,7 @@
 
 Add bucket:
 
-`scoop bucket add milnak https://github.com/milnak/my-scoop-bucket`
+`scoop bucket add milnak https://github.com/milnak/scoop-bucket`
 
 Check that it works:
 
@@ -20,4 +20,4 @@ Install app:
 
 Run app:
 
-clonespy
+`clonespy`
