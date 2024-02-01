@@ -1,5 +1,7 @@
 # Milnak's Scoop Bucket
 
+Note that most of these are in progress. Do not rely on these to work!
+
 ## Add bucket
 
 `scoop bucket add milnak https://github.com/milnak/scoop-bucket`
@@ -40,3 +42,4 @@ CloneSpy 3.43    milnak
 
 [Buckets Wiki](https://github.com/ScoopInstaller/Scoop/wiki/Buckets)
 
+[Extras Bucket](https://github.com/ScoopInstaller/Extras/tree/master/bucket)
