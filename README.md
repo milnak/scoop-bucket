@@ -35,3 +35,8 @@ CloneSpy 3.43    milnak
 ## Run app
 
 `CloneSpy64.exe`
+
+## More Info
+
+[Buckets Wiki](https://github.com/ScoopInstaller/Scoop/wiki/Buckets)
+
