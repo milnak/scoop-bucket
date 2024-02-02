@@ -42,4 +42,6 @@ CloneSpy 3.43    milnak
 
 [Buckets Wiki](https://github.com/ScoopInstaller/Scoop/wiki/Buckets)
 
+[App Manifests Wiki](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
+
 [Extras Bucket](https://github.com/ScoopInstaller/Extras/tree/master/bucket)
