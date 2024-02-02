@@ -1,4 +1,10 @@
 {
+  # TODO: 
+  # Pass /S for silent installation
+  # Pass /INSTALLDIR=<path> for install directory
+  # Pass /X64 for 64-bit version install (ignored on 32-bit)
+  # Pass /NOSHORTCUTFOLDER (or /SHORTCUTFOLDER= ?)
+  # Pass /NODESKTOPSHORTCUT
   "version": "3.43",
   "homepage": "https://clonespy.com/",
   "description": "A free duplicate file cleanup tool for Windows© XP/Vista/7/8/8.1/10.",
