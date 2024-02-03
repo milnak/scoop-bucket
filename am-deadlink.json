@@ -1,8 +1,7 @@
 {
-    # TODO: 
+    # TODO:
     # Add /SILENT
-    # Add /DIR="x:\dirname"
-    "version": "5.0",
+    # Add /DIR="x:\dirname""version": "5.0",
     "description": "AM-DeadLink",
     "homepage": "https://www.aignes.com/deadlink.htm",
     "license": "Freeware",
