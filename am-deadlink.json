@@ -13,7 +13,7 @@
             "/SILENT",
             "/DIR=$dir"
         ]
-    }
+    },
     "license": "Freeware",
     "url": "https://www.aignes.info/download/dlsetup.exe"
 }
