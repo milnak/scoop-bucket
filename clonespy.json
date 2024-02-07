@@ -1,9 +1,5 @@
 {
-  "00_todo": "Pass /S for silent installation",
-  "01_todo": "Pass /INSTALLDIR=<path> for install directory",
-  "02_todo": "Pass /X64 for 64-bit version install (ignored on 32-bit)",
-  "03_todo": "Pass /NOSHORTCUTFOLDER (or /SHORTCUTFOLDER= ?)",
-  "04_todo": "Pass /NODESKTOPSHORTCUT",
+  "00_todo": "Needs elevation",
   "architecture": {
     "32bit": {
       "pre_install": "Remove-Item \"$dir\\CloneSpy64.exe\""
@@ -17,11 +13,10 @@
   },
   "bin": "CloneSpy.exe",
   "checkver": {
-    "uri": "https://clonespy.com/download/",
-    "regex": "<strong>CloneSpy V(\\d+\\.\\d+)<\/strong>"
+    "regex": "<strong>(\\d\\.\\d+)<\/strong>"
   },
   "description": "A free duplicate file cleanup tool for Windows© XP/Vista/7/8/8.1/10.",
-  "hash": "6f1c39f521d7ccdc2c0cfb8a69d456c57b6094e95afc9d9294d85f35eb116a45",
+  "hash": "6F1C39F521D7CCDC2C0CFB8A69D456C57B6094E95AFC9D9294D85F35EB116A45",
   "homepage": "https://clonespy.com/",
   "installer": {
     "script": [
