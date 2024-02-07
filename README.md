@@ -40,6 +40,12 @@ CloneSpy 3.43    milnak
 
 ## More Info
 
+To verify update scripts:
+
+```PowerShell
+~\scoop\apps\scoop\current\bin\checkver.ps1 -Dir .
+```
+
 [Buckets Wiki](https://github.com/ScoopInstaller/Scoop/wiki/Buckets)
 
 [App Manifests Wiki](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
