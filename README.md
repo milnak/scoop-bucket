@@ -40,6 +40,12 @@ CloneSpy 3.43    milnak
 
 ## More Info
 
+To refresh bucket cache:
+
+```PowerShell
+scoop update
+```
+
 To verify update scripts:
 
 ```PowerShell
