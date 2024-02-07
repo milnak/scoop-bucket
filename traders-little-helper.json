@@ -1,7 +1,5 @@
 {
-    # TODO: Doesn't set up registry under
-    # HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Robert Hoffmann\Trader's Little Helper
-    # so options/preferences is broken.
+    "00_todo": "Doesn't set up registry -- see install_script.iss",
     "version": "2.8.4.185",
     "autoupdate": {
         "hash": {

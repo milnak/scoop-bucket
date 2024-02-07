@@ -1,0 +1,756 @@
+::  ---------------------------------------  ::
+::    Trader's Little Helper - Change Log    ::
+::  ---------------------------------------  ::
+
+
+Version 2.8.4.185 (Release date: 2020-10-15)
+
+ - Fixed: Encoding a .wav file to FLAC format will fail with the
+          error message 'file is not a supported type of audio
+          file or is corrupt' if the file is in WAVE/RF64 instead
+          of WAVE/RIFF format.
+ - Reworked: Process log error message on the 'Encode wav files',
+             'Re-encode flac files' and 'Decode audio files' pages
+             when the 'Delete source files' option is checked and
+             deletion of a source file failed.
+ - Updated: 'About' dialog.
+ - Updated: Manifest file.
+ - Updated: License file shown during installation.
+ - Minor tweaks.
+
+
+Version 2.8.3.182 (Release date: 2019-11-04)
+
+ - Fixed: Sometimes Trader's Little Helper will hang when checking
+          audio files for sector boundary errors. Any attempts to
+          cancel processing or to exit the application will fail.
+          Note: This bug was introduced with TLH v2.8.2 and is
+          therefore not present in releases prior to v2.8.2.
+ - Updated: Manifest file.
+ - Updated: License file shown during installation.
+
+
+Version 2.8.2.181 (Release date: 2019-04-03)
+
+ - Fixed: Checking certain non-compliant .wav files for sector
+          boundary errors will fail with an error message box
+          saying 'List index out of bounds'. After closing the
+          pop up Trader's Little Helper hangs. Though the GUI is
+          still responsive any attempts to cancel processing or
+          to exit the application will fail.
+ - Fixed: Checking .ape, .flac or .shn files for sector boundary
+          errors will fail with an error message box saying 'List
+          index out of bounds' if the file name starts with a dash
+          ('-'). After closing the pop up Trader's Little Helper
+          hangs. Though the GUI is still responsive any attempts
+          to cancel processing or to exit the application will
+          fail.
+ - Reworked: Procedure for reading the output of the command-line
+             executable used for checking files for sector boundary
+             errors.
+ - Reworked: Procedures that handle the process log reports on the
+             'Check audio files for SBEs' page.
+ - Updated: Manifest file.
+ - Updated: License file shown during installation.
+
+
+Version 2.8.1.179 (Release date: 2018-12-27)
+ - Fixed: Processing a .flac file will fail with an error message
+          ('file does not appear to be a flac file' or 'file is not
+          a supported type of audio file or is corrupt') if the file
+          contains an ID3v2 tag at its beginning. Note: This bug was
+          introduced with TLH v2.8.0 and is therefore not present in
+          releases prior to v2.8.0.
+ - Updated: Manifest file.
+ - Updated: License file shown during installation.
+
+
+Version 2.8.0.178 (Release date: 2018-10-23)
+ - Added: Privilege elevation to take actions that require administrator
+          privileges, namely Save default settings and Restore shell
+          integration. So it's not required anymore to execute Trader's
+          Little Helper via "Run as administrator..."; the program will
+          automatically open an elevation prompt to ask for the rights
+          needed.
+ - Changed: Position and size of the Trader's Little Helper window is
+            not stored to the registry but to a file in the Application
+            Data folder of the user.
+ - Changed: The locations of the tracker lists have been moved from the
+            installation folder to the user's Application Data folder.
+            So edited tracker lists can be saved without requiring
+            administrative rights / elevated permissions.
+ - Reworked: Procedures that handle reading/writing of default settings
+             from/to the registry.
+ - Reworked: Procedures that integrate/remove Trader's Little Helper
+             into/from Windows Explorer context menus.
+ - Reworked: Procedures that read/write tracker and announce URL lists.
+ - Reworked: Procedures that handle taking/saving screenshots of the
+             active Trader's Little Helper window.
+ - Reworked: Installer procedures that create/remove registry settings
+             used for the default settings.
+ - Reworked: Installer procedures that create/remove registry settings
+             used for integration of Trader's Little Helper into Windows
+             Explorer context menus.
+ - Reworked: Manifest file.
+ - Fixed: Checking whether or not a file to process exists will fail with
+          the error message 'file cannot be found' if an existing file's
+          Date Modified timestamp is invalid/corrupt.
+ - Fixed: On the 'Show audio file details' page the combo box for selecting
+          the display mode is misplaced in some cases.
+ - Updated: 'About' dialog.
+ - Updated: Tracker list file.
+ - Updated: License file shown during installation.
+ - Updated: Info file shown during installation.
+ - Minor tweaks.
+
+
+Version 2.7.0.172 (Release date: 2011-05-22)
+ - Added: Ability to process multiple folders passed via Windows Explorer
+          context menus or via Drag & Drop.
+ - Added: Changeable default setting 'Type of checksum file to create (post
+          encoding)' in the 'Encode wav files' section of the 'Preferences'
+          dialog.
+ - Added: Changeable default setting 'Type of checksum file to create (post
+          re-encoding)' in the 'Re-encode flac files' section of the
+          'Preferences' dialog.
+ - Changed: The 'Integrate Trader's Little Helper into Windows Explorer'
+            option in the 'General' > 'Shell integration' section of the
+            'Preferences' dialog has been replaced by two separate options
+            'Accept files and folders dropped from Windows Explorer' and
+            'Integrate Trader's Little Helper into Windows Explorer context
+            menus'.
+ - Changed: The 'Integrate Trader's Little Helper into Windows Explorer'
+            option on the 'Select Additional Tasks' page of the installer has
+            been replaced by two separate options 'Integrate TLH into Windows
+            Explorer context menus' and 'Enable TLH to accept files/folders
+            dropped from Windows Explorer'.
+ - Reworked: Procedures that integrate/remove Trader's Little Helper into/from
+             Windows Explorer context menus.
+ - Reworked: Installer procedures that create/remove registry settings used
+             for integration of Trader's Little Helper into Windows Explorer
+             context menus.
+ - Fixed: When decoding .flac files the result always will be 'file is corrupt,
+          or decoder does not work properly' if the name of the processed
+          file contains letters with diacritical marks (accented letters, for
+          example) and the OS running is Windows Vista or higher.
+ - Fixed: In some cases Trader's Little Helper cannot be shut down when a
+          running task has been cancelled before.
+ - Fixed: On the 'Create checksum file' page the combo box for selecting the
+          type of checksum file to create is misplaced in some rare cases.
+ - Fixed: When foobar2000 is installed and the OS running is Windows Vista or
+          higher the context menu integration of Trader's Little Helper may
+          be irrevocably gone (depends on the default settings for foobar2000)
+          or processing may terminate with the error message 'The parameters
+          passed contain invalid or incomplete commands.'.
+ - Updated: License file shown during installation.
+ - Minor tweaks.
+
+
+Version 2.6.0.168 (Release date: 2010-04-18)
+ - Added: Changeable default setting in the 'Create checksum file' section of
+          the 'Preferences' dialog to clear an existing file list before adding
+          files from within Windows Explorer.
+ - Added: Changeable default setting in the 'Create checksum file' section of
+          the 'Preferences' dialog to include files from all subfolders when
+          adding a folder from within Windows Explorer.
+ - Added: Changeable default setting in the 'Create checksum file' section of
+          the 'Preferences' dialog to automatically start processing after
+          adding files from within Windows Explorer.
+ - Changed: No matter what type of files were added to the list on the 'Create
+            checksum file' page, only files with file extensions appropriate
+            to the type of checksum file selected will be displayed and
+            processed. The files not displayed (if any) are being hold in
+            the background. So if the type of the checksum file to create
+            is changed, again all files added can be taken into account to
+            create and display the list of appropriate files.
+ - Fixed: When encoding .wav files to flac format with 'Post encoding tasks'
+          option 'Test encoded files' checked the test result always will
+          be 'file is corrupt, or decoder does not work properly' if the
+          name of the processed file contains letters with diacritical marks
+          (accented letters, for example) and the OS running is Windows Vista
+          or higher.
+ - Fixed: When re-encoding .flac files with 'Post re-encoding tasks' option
+          'Test re-encoded files' checked the test result always will be
+          'file is corrupt, or decoder does not work properly' if the name
+          of the processed file contains letters with diacritical marks
+          (accented letters, for example) and the OS running is Windows Vista
+          or higher.
+ - Fixed: When testing .flac files in the 'Analysis section' the result always
+          will be 'file is corrupt, or decoder does not work properly' if the
+          name of the processed file contains letters with diacritical marks
+          (accented letters, for example) and the OS running is Windows Vista
+          or higher.
+ - Updated: 'About' dialog.
+ - Updated: Tracker list file.
+ - Updated: License file shown during installation.
+ - Updated: Info file shown during installation.
+ - Updated: Installer (registry settings).
+ - Minor tweaks.
+
+
+Version 2.5.1.165 (Release date: 2010-03-24)
+ - Fixed: When encoding .wav files has been finished two internal messages for
+          debugging purposes will be added to the 'Wav files to encode' window
+          if the 'Post encoding tasks' option 'Create checksum file' is checked.
+ - Fixed: When encoding .wav files with 'Post encoding tasks' option 'Create
+          checksum file' checked has been finished two error messages will pop up
+          and Trader's Little Helper will hang subsequently if the option 'Save
+          checksum file automatically ...' in the 'Create checksum file' section
+          of the 'Preferences' dialog is checked.
+ - Fixed: When re-encoding .flac files with 'Post re-encoding tasks' option 'Create
+          checksum file' checked has been finished two error messages will pop up
+          and Trader's Little Helper will hang subsequently if the option 'Save
+          checksum file automatically ...' in the 'Create checksum file' section
+          of the 'Preferences' dialog is checked.
+ - Updated: License file shown during installation.
+
+
+Version 2.5.0.164 (Release date: 2009-12-10)
+ - Added: After verifying a batch of checksum files a summary of the results is
+          displayed in the process log.
+ - Added: Changeable default setting in the 'Create checksum file' section of the
+          'Preferences' dialog to automatically save the created checksum file as
+          '<name of source file or root folder>.<type of checksum file>'.
+ - Added: Changeable default setting in the 'Check torrent' section of the
+          'Preferences' dialog to switch to a fixed properties page when
+          loading a torrent file.
+ - Added: Changeable default settings in the 'Fix SBEs' section of the
+          'Preferences' dialog allowing not to append the default string
+          '-fixed' in 'fix' mode or '-padded' in 'pad' mode to the base
+          part of output file names.
+ - Added: Changeable default setting in the 'Strip audio file header' section
+          of the 'Preferences' dialog allowing not to append the default string
+          '-stripped' to the base part of output file names.
+ - Changed: The 'Ok' button has been removed from the 'Action to perform'
+            dialog that pops up when files are opened into Trader's Little
+            Helper from within Windows Explorer. Now the dialog will be
+            automatically closed when a task is selected.
+ - Changed: The default name used when saving a checksum file created for a single
+            file is now '<file name>.<file extension>.<checksum file extension>'.
+ - Reworked: Installer procedure for updating an existing tracker list.
+ - Fixed: If the option 'Integrate Trader's Little Helper into Windows Explorer'
+          in the 'General' > 'Shell integration' section of the 'Preferences'
+          dialog is enabled Drag & Drop will not work if the option 'Save windows
+          position and size' in the 'General' > 'Other' section was enabled when
+          Trader's Little Helper was started.
+ - Fixed: Checksum files to verify that only contain comments and/or white
+          lines but no checksums and files names pass verification with result
+          'No errors occured.'.
+ - Fixed: On the 'Create torrent file' page in 'single tracker' mode the
+          'Create' button will never be enabled if the 'Tracker / Announce'
+          field was empty before the tracker was selected from the drop-down
+          list.
+ - Fixed: On the 'Create torrent file' page sometimes some elements will not
+          be properly positioned or sized if the main form is resized.
+ - Fixed: On the 'Check torrent' page in some cases width and height of the
+          announce and the comment fields and the positions of the radio buttons
+          for selecting the properties page displayed will not be properly
+          adjusted if the main form is resized.
+ - Updated: 'About' dialog.
+ - Updated: Tracker list file.
+ - Updated: License file shown during installation.
+ - Updated: Info file shown during installation.
+ - Updated: Installer (registry settings).
+ - Minor tweaks.
+
+
+Version 2.4.1.160 (Release date: 2008-06-10)
+ - Added: A right-click on the 'Add' button of the 'Verify checksum files' page
+          will open a popup menu allowing to open a dialog to recursively search
+          for all checksum files in a given directory.
+ - Fixed: If Trader's Little Helper will be installed for the first time (or
+          re-installed after completely uninstalling an existing version) during
+          setup the error message 'An I/O error occured while processing the
+          existing tracker list.' is displayed.
+ - Fixed: If Trader's Little Helper will be installed the for first time (or
+          re-installed after uninstalling an existing version) setup searches
+          for two registry keys that are present only if a version of Trader's
+          Little Helper is already installed.
+ - Updated: License file shown during installation.
+ - Minor tweaks.
+
+
+Version 2.4.0.159 (Release date: 2008-05-30)
+ - Added: Ability to create both trackerless and multi-tracker torrent files.
+ - Added: Simple editor for multi-tracker announce lists.
+ - Added: Changeable default settings in the 'Encode wav files' and 'Re-encode flac
+          files' sections of the 'Preferences' dialog to set post (re-)encoding tasks.
+ - Added: If a multi-tracker torrent file is to be created a right-click on the
+          'Expand' button of the 'Create torrent file' page will open a popup menu
+          allowing to expand the announce list instead of the comment.
+ - Added: Installer dialog to choose whether to replace, update or continue using
+          an already existing tracker list file.
+ - Reworked: Peers source / announce parts of the 'Torrent properties' section on
+             the 'Create torrent file' page.
+ - Changed: On the 'Create torrent file' page the 'File list ...' button has been
+            removed from the 'Source to create torrent from' section. A right-click
+            on the 'Browse ...' button now will open a popup menu that provides a
+            'Show source file list ...' item.
+ - Changed: On the 'Check torrent' page trackerless torrents will be completely
+            decoded and can be checked.
+ - Changed: On the 'Check torrent' page all given announce URLs are shown in the
+            'Summary' section of the 'Torrent properties' box if the torrent file
+            additionally contains an announce list.
+ - Changed: Creation time of a checksum file is given using the 24-hour clock in
+            hh:mm:ss format.
+ - Fixed: When processing a valid .flac file in some cases the result is a 'file is
+          not a supported type of audio file or is corrupt' error.
+ - Fixed: When creating a .sfv checksum file the last modification time of the
+          processed files (stored as comment) may be inaccurate up to two seconds
+          if the files are located on a NTFS formatted drive.
+ - Fixed: On the 'Check torrent' page in some cases the width of the columns in the
+          'Files' section of the 'Torrent properties' box will not be adjusted if
+          the main form is resized.
+ - Updated: Tracker list file.
+ - Updated: Installer (registry settings to hold the post (re-)encoding tasks).
+ - Updated: License file shown during installation.
+ - Minor tweaks.
+
+
+Version 2.3.1.156 (Release date: 2008-05-04)
+ - Added: Changeable default settings in the 'Create torrent file' section of the
+          'Preferences' dialog to exclude .db and/or .torrent files from the file
+          list of a multi-file torrent.
+ - Changed: The option to exclude .db files from the file list of a multi-file
+            torrent has been removed from the 'Create torrent file' page.
+ - Changed: The default location to save a created .torrent file now is the folder
+            containing the source the .torrent file is for (i.e. the parent of the
+            source folder if a multi-file torrent was created).
+ - Changed: User confirmation is required if a multi-file .torrent file shall be
+            saved inside the directory the .torrent file is for.
+ - Updated: Procedure to create the file list for a multi-file torrent.
+ - Updated: Installer (registry setting to hold the file extensions of files to
+            be excluded when creating a multi-file torrent).
+ - Updated: License file shown during installation.
+
+
+Version 2.3.0.155 (Release date: 2008-04-24)
+ - Added: Ability to decode .mp2 audio files.
+ - Reworked: Procedure to bring the application window to front when shell integration
+             or Drag & Drop is used to pass a folder or files to Trader's Little
+             Helper.
+ - Changed: User confirmation is required if a created checksum file shall be saved
+            to a location from where it cannot be verified (i.e. outside the given
+            root folder).
+ - Changed: Torrent files will be completely checked if the selected directory
+            (multi-file torrent) respectively the selected file (single-file torrent)
+            does not match the 'Downloads as' property.
+ - Changed: If a page with an already maximized process log window is selected the
+            log will be displayed collapsed.
+ - Fixed: When creating a .st5 file pressing the 'Cancel' button in some rare cases
+          causes Trader's Little Helper to hang if there was a source file error
+          detected prior to pressing the 'Cancel' button.
+ - Fixed: When verifying a .ffp or a .st5 file pressing the 'Cancel' button in
+          some rare cases causes Trader's Little Helper to hang if there was a
+          verify error prior to pressing the 'Cancel' button.
+ - Fixed: When encoding .wav files to flac format with the 'Align on sector
+          boundaries' option checked in some cases Trader's Little Helper crashes
+          with a 'list index out of bounds' error message after the last source
+          file was processed.
+ - Fixed: During encoding .wav files to flac format the 'Level' combo box in the
+          'Encoding options' section is enabled.
+ - Updated: Procedure to determine the type of a source file by means of the
+            identifying characters in its header.
+ - Updated: 'Action to perform' dialog that will be opened when shell integration or
+             Drag & Drop is used to pass a folder or files to Trader's Little Helper.
+ - Updated: Procedure to restore shell integration.
+ - Updated: Tracker list file.
+ - Updated: Installer (registration of all supported audio file types).
+ - Updated: License file shown during installation.
+
+
+Version 2.2.2.152 (Release date: 2008-01-28)
+ - Fixed: When encoding .wav files to flac format with option 'Keep foreign metadata'
+          unchecked and option 'Align on sector boundaries using fix mode' checked
+          the process log result reported for each file includes the type(s) of the
+          foreign metadata removed from the file processed before (if any).
+ - Fixed: When checking multi-file torrents with a size greater than 2 GB processing
+          stops and an invalid conclusion is reported when 2 GB of data have been
+          processed.
+ - Fixed: The dialog opened by the 'File list' button on the page 'Create torrent
+          file' shows wrong file sizes for files bigger than 2 GB. The total size
+          reported at the bottom of the dialog is wrong if there are more than 2 GB
+          of data.
+ - Fixed: When creating a torrent file the total size of file data reported in the
+          process log is wrong if there are more than 2 GB of data to process.
+ - Updated: License file shown during installation.
+
+
+Version 2.2.1.151 (Release date: 2008-01-18)
+ - Changed: Opening size and position of all 'Browse for folder' dialogs are now
+            set by Windows OS.
+ - Fixed: When using Windows font size settings greater than 96 DPI (large fonts)
+          the 'Add files' dialog of the 'Create checksum file' page and the 'File
+          list to create torrent from' and 'Edit tracker list' dialogs of the
+          'Create torrent file' page are incompletely displayed so parts of those
+          dialogs are not accessible.
+ - Updated: License file shown during installation.
+
+
+Version 2.2.0.150 (Release date: 2008-01-17)
+ - Added: Page 'Strip audio file header'.
+ - Enhanced: Procedure to determine those radio buttons in the 'Action to perform'
+             dialog (opened when shell integration or Drag & Drop is used to pass a
+             folder or files to Trader's Little Helper) that have to be disabled.
+             Newer versions of Winamp register audio file type associations in an
+             unusual way, so in some cases those radio buttons were not correctly
+             en/disabled if Winamp is installed.
+ - Changed: The number of "flashing" console boxes needed when encoding, re-encoding,
+            decoding, testing encoded files or converting encoding format was reduced
+            to one box per task.
+ - Fixed: 'Convert encoding format' still allows basic flac re-encoding.
+ - Fixed: In the 'Action to perform' dialog (opened when shell integration or
+          Drag & Drop is used to pass a folder or files to Trader's Little Helper)
+          more than one radio button can be checked.
+ - Updated: Menu of Trader's Little Helper.
+ - Updated: 'Action to perform' dialog that will be opened when shell integration or
+             Drag & Drop is used to pass a folder or files to Trader's Little Helper.
+ - Updated: License file shown during installation.
+ - Updated: Installer.
+ - Minor tweaks.
+
+
+Version 2.1.0.147 (Release date: 2008-01-07)
+ - Added: Page 'Re-encode flac files'.
+ - Added: Page 'Test encoded audio files'.
+ - Added: Page 'Check audio files for SBEs'.
+ - Added: Changeable default setting 'Re-encoding level' in the 'Fix SBEs' section
+          of the 'Preferences' dialog.
+ - Added: Changeable default setting 'Add version and copyright of shntool used for
+          analysis' in the 'Show audio file details' section of the 'Preferences'
+          dialog.
+ - Changed: The 'Re-encode flac files' part of the 'Encode wav files / Re-encode flac
+            files' page has been removed.
+ - Changed: The 'Test without writing decoded data' part of the 'Decode audio files'
+            page has been removed.
+ - Changed: The 'Show audio file details' page doesn't give a SBE related summary
+            anymore.
+ - Changed: 'Re-encoding level' interface of the 'Fix SBEs' page.
+ - Changed: In the 'Preferences' dialog those pages have been removed that don't offer
+            any changeable default settings.
+ - Fixed: When encoding .wav files or re-encoding .flac files in some cases the post
+          (re-)encode worker threads for generating cfp, ffp and st5 checksums will
+          not be terminated when the user cancels processing.
+ - Fixed: When decoding audio files with post-decoding option 'Test wav files for MP3'
+          enabled in some cases 'Access violation' error messages constantly pop up
+          while processing the decoded .wav files.
+ - Fixed: When processing tasks from the 'Format' section Trader's Little Helper will
+          catch the focus from the application that actually has it each time a new
+          file is processed.
+ - Fixed: When creating a .ffp checksum file, the process log summary says 'No errors
+          occured.' if an error was detected by metaflac.
+ - Fixed: When creating a .st5 checksum file, the process log summary says 'No errors
+          occured.' if an error was detected by shntool.
+ - Fixed: When checking for SBEs 'There were no sector boundary errors.' is reported
+          if shntool can't provide any SBE related information about the audio data.
+ - Fixed: When using Windows font size settings greater than 96 DPI (large fonts)
+          the GUI is incompletely displayed so all the right-sided buttons are not
+          accessible.
+ - Fixed: When using the context menu of a file in Windows Explorer to add that file
+          to an already running instance of Trader's Little Helper sometimes a
+          'Cannot focus a disabled or invisible window' error occurs.
+ - Fixed: Selecting 'This one:' in the 'Directory to write processed files to' box
+          of the 'Preferences' dialog section 'Directories' will not enable edit
+          field and 'Browse' button. Selecting 'Same as source files' will not
+          disable 'This one:' radio button, edit field and 'Browse' button.
+ - Fixed: Selecting 'This one:' in the 'Directory to write torrent files to' box
+          of the 'Preferences' dialog section 'Create torrent file' will not enable
+          edit field and 'Browse' button. Selecting 'Same as last one accessed before
+          creating a torrent file' will not disable 'This one:' radio button, edit
+          field and 'Browse' button.
+ - Updated: Menu of Trader's Little Helper.
+ - Updated: 'Action to perform' dialog that will be opened when shell integration or
+             Drag & Drop is used to pass a folder or files to Trader's Little Helper.
+ - Updated: Tracker list file.
+ - Updated: License file shown during installation.
+ - Updated: Installer.
+ - Minor tweaks.
+
+
+Version 2.0.1.143 (Release date: 2007-12-08)
+ - Fixed: The icons for supported lossless audio file types (.ape, .flac, .mkw, .shn)
+          and for supported checksum file types (.cfp, .ffp, .md5, .sfv, .st5) are
+          messed up in Windows Explorer.
+
+
+Version 2.0.0.142 (Release date: 2007-12-07)
+ - Added: Support of mp3 compression format (except when testing encoded audio
+          files or showing audio file details).
+ - Added: Support of mkw compression format (except when encoding files).
+ - Added: Ability to re-encode .flac files.
+ - Added: Ability to create and verify .sfv checksum files.
+ - Added: Ability to create single-file torrents.
+ - Added: Ability to directly convert encoding formats ape/flac/shn/mkw to flac
+          or mp3 format.
+ - Added: Ability to restore the shell integration of Trader's Little Helper.
+ - Added: Flag 'Private torrent' on the 'Create torrent file' page.
+ - Added: Support of UTF-8 string encoding when creating a torrent file.
+ - Added: 'Check torrent' page. Ability to load/decode a torrent file, list all
+          of its properties, and hash the torrent file against a local fileset
+          (or file). Reported are files missing, files only partially matching,
+          and what percentage of completion the user is at.
+ - Added: Page 'Test wav files for mp3'.
+ - Added: Menu item 'Screenshot'. Created will be a screenshot of the application
+          window that can be saved in gif format.
+ - Added: Menu item 'Homepage' that opens the default browser and loads the
+          homepage of Trader's Little Helper.
+ - Added: Menu item 'Check for update' that checks for a new release, downloads the
+          installer (if available), and starts the setup if wanted.
+ - Added: Button 'Legend' on the 'Show audio file details' page that will open a
+          summary of the one-character abbreviations 'shntool.exe' uses in 'len
+          mode' output.
+ - Added: GUI is sizeable. Window size and position can be saved/restored when
+          closing/starting Trader's Little Helper.
+ - Added: In the 'Add files' dialog of the 'Create checksum file' page single files
+          can be added via double-click.
+ - Added: Items from a file list can be removed not only with the 'Remove' button
+          but with the 'Del' key.
+ - Added: Process logs can be saved not only to a file but copied to the clipboard.
+          A right-click on the 'Save' button (if available) will open a popup menu
+          to choose what action to perform.
+ - Added: Support of Windows Themes.
+ - Reworked: Almost every encoding related procedure.
+ - Reworked: Procedures to create and verify .md5, .ffp, .st5, and .cfp files.
+ - Reworked: Dialog to edit tracker/announce list items.
+ - Reworked: Almost every fixing SBEs related procedure.
+ - Reworked: Appearance of the 'Preferences' dialog
+ - Reworked: Script of setup file.
+ - Enhanced: Log details when encoding files.
+ - Enhanced: 'Preferences' dialog (more default settings that can be changed, new
+             default settings due to the new functions added).
+ - Changed: There's no need for 'cygwin1.dll' anymore because the latest releases
+            of 'shntool.exe' and 'shorten.exe' are native Windows compiles now.
+ - Changed: GUI's tab structure has been transformed into a menu structure.
+ - Changed: Percentage progress indicators instead of dots in the process logs
+            of most of the pages.
+ - Changed: Root of 'Browse for folder' dialogs is 'Desktop' instead of 'My Computer'.
+ - Changed: When encoding .wav files there are no more files with temporary
+            names ('track1-fixed.flac' or 'track5-postpadded', for example)
+            that need to be re-named ('track1.wav' will be directly encoded to
+            'track1.flac', for example).
+ - Changed: The page 'Test encoded audio files' has been integrated into the page
+            'Decode audio files' (as option 'Test without writing decoded files').
+ - Changed: Verifying .ffp files will always work the way it does in older
+            releases when using the 'full ffp verify' setting. The option to
+            de-activate this setting has been removed from the 'Preferences' dialog.
+ - Changed: Interfaces of the 'Encode wav files', 'Create torrent file' and 'Fix
+            sector boundary errors' pages.
+ - Changed: Output in 'len mode' on the 'Show audio file details' page due to the
+            different output of the latest releases of 'shntool.exe'.
+ - Changed: Fixing SBEs of multiple files in 'pad mode' will not be aborted if an
+            error occurs but will be continued processing the next files.
+ - Changed: The 'Preview w/o making changes' option on the 'Fix sector boundary
+            errors' page had to be removed because the latest releases of
+            'shntool.exe' don't offer that option anymore.
+ - Changed: At the end of the setup procedure the changelog is not shown anymore.
+ - Fixed: Trader's Little Helper might hang if files are encoded with the 'Align
+          on sector boundaries' option enabled and there is no more disk space to
+          store all encoded data.
+ - Fixed: If there is no more disk space when encoding to flac format the error
+          message in question is confusing / not meaningful.
+ - Fixed: Verification of a checksum file fails if the files listed in the checksum
+          file do not have a common root folder.
+ - Fixed: Files can be added multiple times via the 'Add files' dialog of the 'Create
+          checksum file' page.
+ - Fixed: When verifying .cfp files in some rare cases the wrong part of a shntool
+          error message is logged.
+ - Fixed: When showing audio file details sometimes an 'access violation at address ...
+          in module RICHED20.DLL' error occurs.
+ - Fixed: When creating a torrent file the time stored is not UTC time but local time.
+ - Fixed: When creating a torrent file in some cases the torrent file may be invalid
+          if files with a size of zero bytes are part of the torrent.
+ - Fixed: When creating a torrent file and a file in the torrent "ends" exactly on
+          a piece boundary the hash of the next file in the torrent will be wrong.
+ - Fixed: When encoding files with the 'Align on sector boundaries' option enabled
+          the file order confirmation box always pops up no matter what is/was set in
+          the 'Preferences' dialog.
+ - Fixed: When using the context menu of a file in Windows Explorer to add that file
+          to an already running instance of Trader's Little Helper sometimes a 'cannot
+          focus a disabled or invisible window' error occurs.
+ - Updated: 'Action to perform' dialog that will be opened when shell integration or
+             Drag & Drop is used to pass a folder or files to Trader's Little Helper.
+ - Updated: 'About' dialog.
+ - Updated: Installer (registration of .mkw and .sfv file types, improved uninstall
+            of some registry entries).
+ - Updated: License file shown during installation.
+ - Updated: Info file shown during installation.
+ - Minor tweaks.
+
+
+Version 1.1.1.90 (Release date: 2006-10-30)
+ - Fixed: Drag & Drop with files that are not .cfp, .ffp, .md5, .st5, .ape, .flac,
+          .shn, or .wav files will fail with an error message.
+ - Fixed: Encoding .wav files to flac format with option 'Align on sector boundaries'
+          checked will work properly, but the subsequent rename of the tempory .flac
+          files to their final names will fail and further operations will be aborted,
+          if the string '.flac' can be found in the path name of the .wav files
+          ('E:\Bob Dylan\bd1988-06-18.flac16\track01.wav' for example).
+ - Fixed: Encoding .wav files with sub-chunk headers to flac format with option 'Align
+          on sector boundaries' unchecked will stop with an error message, and further
+          processing will be aborted.
+ - Fixed: Link 'Fix SBEs' on user manual page 'How to -> Audio files details' refers
+          to 'System menu -> Preferences -> Fix SBEs'.
+ - Updated: 'About' dialog.
+ - Updated: User manual.
+ - Updated: License file shown during installation.
+ - Updated: Info file shown during installation.
+
+
+Version 1.1.0.89 (Release date: 2006-09-15)
+ - Added: Ability to create and verify composite md5 fingerprint files (.cfp files).
+ - Added: Ability to create torrent files. It is possible to select a tracker from a
+          default tracker list, add a comment, set the piece size and exclude .db files.
+ - Added: Ability to create external seek table files (.skt) for non-seekable .shn files.
+ - Added: Help file (.chm format). Help can be called not only via the system menu
+          but at every time by pressing the 'F1' key.
+ - Reworked: Shell integration of Trader's Little Helper (now all tasks are available
+             via the context menu of Windows Explorer).
+ - Reworked: Drag & Drop procedure (now all tasks are available when files were
+             dragged from Windows Explorer and dropped on Trader's Little Helper).
+ - Reworked: 'Choose action' dialog that will be opened when shell integration or
+             Drag & Drop is used to pass a folder or files to Trader's Little Helper.
+ - Reworked: Display of progress in the process log window when verifying or creating
+             a wholefile md5 checksum.
+ - Enhanced: 'Preferences' dialog (more default settings that can be changed).
+ - Improved: Procedure to detect already existing instances of 'cygwin1.dll' during
+             setup.
+ - Changed: Option 'Full ffp vrf.' on 'Verify checksum files' page moved to
+            'Preferences' dialog. Full flac fingerprint verification becomes the
+            default setting.
+ - Changed: For testing and decoding .shn files 'shntool.exe' is used instead of
+            'shorten.exe' because in some cases 'shorten.exe' does not detect zero
+            blocks in shn encoded audio data and so does not report any error.
+ - Fixed: Checksums are compared with case-sensitivity when verifying checksum files.
+ - Fixed: In some rare cases the default directory to add files from is the installation
+          directory of Trader's Little Helper.
+ - Fixed: If the 'Search' dialog of Windows Explorer is used to pass files to create
+          a checksum file the determining the common root folder will fail in most
+          cases.
+ - Fixed: If an error occured when decoding .flac files sometimes the file name is
+          shown twice and/or there is more than one error message line in the process
+          log window.
+ - Fixed: Shell integration of Trader's Little Helper is done in every folder, even
+          in ones where is doesn't make any sense ('My Computer', for example).
+ - Fixed: In some cases the installation of Trader's Little Helper partially fails
+          due to an 'out of string range' error.
+ - Updated: 'About' dialog.
+ - Updated: License file shown during installation.
+ - Updated: Info file shown during installation.
+ - Updated: Installer (registration of .cfp file type and ability to generate an
+            installation log file added).
+ - Minor tweaks.
+
+
+Version 1.0.0.72 (Release date: 2005-10-16)
+ - Added: Ability to encode wav files to ape, flac or shn format. Encoding options
+          include 'Align on sector boundaries'. Post encoding tasks include 'Test
+          encoded files' and 'Create checksum file'.
+ - Added: Option on the 'Verify checksum files' page to do a full flac fingerprint
+          verification by re-calculating the md5 fingerprint of the audio data and
+          checking it against the fingerprint stored in the .flac file header.
+ - Added: Ability to verify multiple checksum files at once.
+ - Added: Ability to add all files in a folder at once when creating a checksum file.
+ - Added: 'Preferences' dialog for changing some default settings.
+ - Added: Checksum files (.ffp, .md5, .st5) can be dragged from Windows Explorer
+          and dropped on Trader's Little Helper for verifying purposes.
+ - Added: .wav files can be dragged from Windows Explorer and dropped on Trader's
+          Little Helper for encoding purposes.
+ - Added: Shell integration of Trader's Little Helper for folders and for encoding
+          .wav files.
+ - Added: Buttons on the 'Verify checksum files', 'Create checksum file' and 'Test
+          encoded files' pages to expand the size of the respective log window.
+ - Added: 'New folder' button in the 'Output location / Alternate directory' dialogs
+          of the 'Fix SBEs', 'Decode files', and 'Encode files' pages.
+ - Added: Option to test for mp3 sourced files after decoding.
+ - Added: 'Help' dialog.
+ - Reworked: 'Verify checksum files' page (window to view the contents of a checksum
+             file added).
+ - Reworked: Shell integration of Trader's Little Helper.
+ - Reworked: Procedure for adding files to create checksum file for.
+ - Reworked: Procedure for creating a checksum file.
+ - Reworked: Procedure for decoding files.
+ - Reworked: Procedures for browsing folders in the 'Output location / Alternate
+             directory' dialogs of the 'Fix SBEs', 'Decode files', and 'Encode files'
+             pages.
+ - Fixed: When saving a created checksum file and the chosen root folder is 'C:\' (or
+          any other drive) the default name for this file is '.<type of checksum>'.
+ - Fixed: When saving details of audio files located on 'C:\' (or any other drive)
+          the default name for the log file is '.shntool.txt'.
+ - Fixed: Empty checksum files are not recognized as empty when verifying multiple
+          checksum files.
+ - Fixed: Setup installs 'cygwin1.dll' even though Cygwin is installed.
+ - Updated: 'About' dialog.
+ - Updated: License file shown during installation.
+ - Updated: Info file shown during installation.
+
+Version 0.9.3.56 (Release date: 2005-04-27)
+ - Fixed: When fixing sector boundary errors of .wav files or padding .wav files
+          with zero bytes the output files are encoded in .flac format.
+
+Version 0.9.2.55 (Release date: 2005-04-26)
+ - Added: Ability to verify .shn files.
+ - Added: Ability to pad files with zero bytes so padded files will be aligned on
+          sector boundaries.
+ - Added: The re-encoding level can be set when fixing sector boundary errors.
+ - Added: When fixing sector boundary errors the default setting 'Skip the first N files
+          that wouldn't be changed' can be disabled to process all files.
+ - Added: Ability to fix sector boundary errors on multiple file sets.
+ - Added: Move up / Move down buttons to change the file order when fixing sector
+          boundary errors.
+ - Added: Button on the 'Verify checksum file' page to clear all information shown on
+          this page.
+ - Added: Buttons on the 'Audio files details', 'Fix SBEs' and 'Decode files' pages
+          to expand the size of the respective log window.
+ - Added: During setup procedure checksum files (.ffp, .md5, .st5) can be associated
+          with Trader's Little Helper for verifying purposes.
+ - Added: During setup procedure lossless compressed audio files (.ape, .flac, .shn)
+          can be associated with Trader's Little Helper for decoding purposes.
+ - Added: Lossless compressed audio files (.ape, .flac, .shn) can be dragged from
+          Windows Explorer and dropped on Trader's Little Helper for decoding purposes.
+ - Changed: Audio files that were located in different directories and/or have different
+            file extensions can be processed at the same time to show details about
+            those files.
+ - Changed: When saving a created checksum file the default name for this file is
+            '<directory>.<type of checksum>'.
+ - Changed: When saving details of audio files the default name for the log file is
+            '<directory>.shntool.txt'.
+ - Changed: Almost all error messaging is done in the respective log window.
+ - Changed: All combo boxes are enabled on startup.
+ - Reworked: Function for reading version resource information.
+ - Reworked: Error messages for processing .flac files.
+ - Fixed: Verifying/creating md5 checksums of/for files bigger than 256 MB will fail
+          with an integer overflow error message.
+ - Fixed: In a .md5 checksum file file names with a leading space will not be recognized
+          when verifying .md5 checksum files.
+ - Fixed: When verifying a checksum file a sharing conflict will be reported and
+          processing will be aborted if a file noted in the checksum file is already
+          used by another process/programm.
+ - Fixed: When creating a checksum file and there are files located in subdirectories
+          of the root directory, file names and checksums can be mixed up.
+ - Fixed: .flac files that can be successfully verified / decoded but have a fingerprint
+          that does not match the audio data will not be recognized as files that can be
+          decoded without errors.
+ - Fixed: The function to determine the type of an audio file will report an error on
+          tagged files and processing will be aborted.
+ - Fixed: In some rare cases verifying / decoding truncated ape files will be reported
+          as successful.
+ - Fixed: Internal error message handler for debugging purposes puts up a wrong error
+          message when verifying .ape files.
+ - Fixed: On the license page displayed during setup procedure the copyrights for
+          'shorten.exe' and 'shntool.exe' are mixed up.
+
+Version 0.9.1.48  (Release date: 2005-03-01)
+ - Fixed: Decoding .flac files will always fail with an error message.
+
+Version 0.9.0.47  (Release date: 2005-02-26)
+ - Added: Ability to fix sector boundary errors.
+ - Fixed: Clicking 'Cancel' to abort and 'Ok' in the follow-up message box very quickly
+          while determing audio file details leads in some rare cases to wrong process
+          results and not properly re-activated buttons.
+ - Fixed: If another process/program already uses an audio file the function to determine
+          the type of this file will report a sharing conflict and processing will be
+          aborted.
+
+Version 0.8.0.43  (Release date: 2005-02-18)
+ - First public version.
+
