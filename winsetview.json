@@ -17,7 +17,6 @@
         },
         "extract_dir": "WinSetView-$version"
     },
-    "bin": "WinSetView.ps1",
     "checkver": {
         "github": "https://github.com/LesFerch/WinSetView"
     },

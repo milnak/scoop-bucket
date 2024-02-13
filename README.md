@@ -69,3 +69,5 @@ Links:
 [App Manifests Wiki](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
 
 [Main Bucket](https://github.com/ScoopInstaller/Main/tree/master/bucket)
+
+[Extras Bucket](https://github.com/ScoopInstaller/Extras/tree/master/bucket)
