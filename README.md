@@ -50,6 +50,10 @@ To verify update scripts:
 
 ```PowerShell
 ~\scoop\apps\scoop\current\bin\checkver.ps1 -Dir .
+
+# or
+
+~\scoop\apps\scoop\current\bin\checkver.ps1 -App .\winsetview.json
 ```
 
 To get file hash for "hash" field:
