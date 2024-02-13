@@ -1,22 +1,31 @@
 {
-    "00_todo": "Needs elevation",
+    "00": "This is a nullsoft installer, which is 7zip-wrapped",
+    "version": "3.43",
+    "description": "A free duplicate file cleanup tool for Windows© XP/Vista/7/8/8.1/10.",
+    "homepage": "https://clonespy.com/",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://clonespy.com/disclaimer/"
+    },
     "architecture": {
         "32bit": {
             "pre_install": "Remove-Item \"$dir\\CloneSpy64.exe\""
         },
         "64bit": {
-            "pre_install": "Remove-Item \"$dir\\CloneSpy.exe\"; Rename-Item \"$dir\\CloneSpy64.exe\" 'CloneSpy.exe'"
+            "pre_install": [
+                "Remove-Item \"$dir\\CloneSpy.exe\"",
+                "Rename-Item \"$dir\\CloneSpy64.exe\" 'CloneSpy.exe'"
+            ]
         }
     },
     "autoupdate": {
         "url": "https://clonespy.com/english/download/cspy$cleanVersion.exe"
     },
     "checkver": {
-        "regex": "<strong>(\\d\\.\\d+)</strong>"
+        "url": "https://clonespy.com/download/",
+        "regex": "<strong>CloneSpy V([\\d.]+)</strong>"
     },
-    "description": "A free duplicate file cleanup tool for Windows© XP/Vista/7/8/8.1/10.",
     "hash": "6F1C39F521D7CCDC2C0CFB8A69D456C57B6094E95AFC9D9294D85F35EB116A45",
-    "homepage": "https://clonespy.com/",
     "installer": {
         "script": [
             "Remove-Item \"$dir\\`$*\" -Recurse",
@@ -24,10 +33,6 @@
             "    if (!(Test-Path \"$persist_dir\\$_\")) { New-Item \"$dir\\$_\" | Out-Null }",
             "}"
         ]
-    },
-    "license": {
-        "identifier": "Freeware",
-        "url": "https://clonespy.com/disclaimer/"
     },
     "persist": [
         "CloneSpy.log",
@@ -44,6 +49,5 @@
             "CloneSpy Help"
         ]
     ],
-    "url": "https://clonespy.com/english/download/cspy343.exe",
-    "version": "3.43"
+    "url": "https://clonespy.com/english/download/cspy343.exe"
 }
