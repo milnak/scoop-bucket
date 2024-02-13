@@ -19,7 +19,7 @@
         }
     },
     "autoupdate": {
-        "url": "https://clonespy.com/english/download/cspy$cleanVersion.exe"
+        "url": "https://clonespy.com/english/download/cspy$cleanVersion.exe#/dl.7z"
     },
     "checkver": {
         "url": "https://clonespy.com/download/",
