@@ -9,11 +9,11 @@
     },
     "architecture": {
         "32bit": {
-            "pre_install": "Remove-Item \"$dir\\CloneSpy64.exe\""
+            "pre_install": "if (Test-Path \"$dir\\CloneSpy64.exe\") { Remove-Item \"$dir\\CloneSpy64.exe\" }"
         },
         "64bit": {
             "pre_install": [
-                "Remove-Item \"$dir\\CloneSpy.exe\"",
+                "if (Test-Path \"$dir\\CloneSpy.exe\") { Remove-Item \"$dir\\CloneSpy.exe\" }",
                 "Rename-Item \"$dir\\CloneSpy64.exe\" 'CloneSpy.exe'"
             ]
         }
