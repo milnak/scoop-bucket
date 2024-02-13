@@ -52,6 +52,14 @@ To verify update scripts:
 ~\scoop\apps\scoop\current\bin\checkver.ps1 -Dir .
 ```
 
+To get file hash for "hash" field:
+
+```PowerShell
+(Get-FileHash -Algorithm SHA256 '.\xscsetup-9.40.0.exe').Hash
+```
+
+Links:
+
 [Buckets Wiki](https://github.com/ScoopInstaller/Scoop/wiki/Buckets)
 
 [App Manifests Wiki](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
