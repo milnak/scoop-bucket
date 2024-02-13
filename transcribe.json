@@ -15,7 +15,8 @@
   "innosetup": true,
   "shortcuts": [
     [
-      "Transcribe.exe"
+      "Transcribe.exe",
+      "Transcribe!"
     ]
   ],
   "url": "https://www.seventhstring.com/xscribe/downwo/xscsetup-9.40.0.exe"
