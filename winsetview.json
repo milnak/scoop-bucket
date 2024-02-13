@@ -1,4 +1,8 @@
 {
+    "version": "2.91",
+    "description": "WinSetView is a tool that will let you easily set File Explorer default folder views.",
+    "homepage": "https://github.com/LesFerch/WinSetView",
+    "license": "MIT",
     "autoupdate": {
         "extract_dir": "WinSetView-$version",
         "url": "https://github.com/LesFerch/WinSetView/archive/refs/tags/$version.zip"
@@ -7,16 +11,13 @@
     "checkver": {
         "github": "https://github.com/LesFerch/WinSetView"
     },
-    "description": "WinSetView is a tool that will let you easily set File Explorer default folder views.",
     "extract_dir": "WinSetView-2.91",
-    "hash": "3c35a4843c2653035a375e85a6ed2e8b0dbd767c830f3760e3b652c17188fd1c",
-    "homepage": "https://github.com/LesFerch/WinSetView",
+    "hash": "3C35A4843C2653035A375E85A6ED2E8B0DBD767C830F3760E3B652C17188FD1C",
     "shortcuts": [
         [
             "WinSetView.exe",
             "WinSetView"
         ]
     ],
-    "url": "https://github.com/LesFerch/WinSetView/archive/refs/tags/2.91.zip",
-    "version": "2.91"
+    "url": "https://github.com/LesFerch/WinSetView/archive/refs/tags/2.91.zip"
 }
