@@ -1,5 +1,5 @@
 {
-    "version": "3.2.2 - build-24",
+    "version": "3.2.2.24",
     "description": "GRIEF (BRIEF clone) is a full-featured console based editor offering a wealth of facilities on multiple Unix, Windows and Mac platforms.",
     "homepage": "https://grief.sourceforge.net/",
     "license": {
@@ -15,13 +15,16 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
+                "_comment": "See lib.autoupdate.ps1 - $versionVariables",
                 "url": "https://github.com/adamyg/grief/releases/download/$version-build$matchBuild/$version-build$matchBuild-setup.exe"
             }
         }
     },
     "checkver": {
+        "_comment": "Convert '3.2.2 - build-24' to '3.2.2.24'",
         "github": "https://github.com/adamyg/grief",
-        "regex": "([\\d.]+) - build-(?<build>\\d+)"
+        "regex": "(?<version>[\\d.]+) - build-(?<build>\\d+)",
+        "replace": "${version}.${build}"
     },
     "innosetup": true,
     "notes": [
