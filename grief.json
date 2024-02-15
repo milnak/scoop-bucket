@@ -6,19 +6,11 @@
         "identifier": "QPL-1.0",
         "url": "https://github.com/adamyg/grief?tab=License-1-ov-file#readme"
     },
-    "architecture": {
-        "32bit": {
-            "url": "https://github.com/adamyg/grief/releases/download/3.2.2-build24/grwin32-build24-setup.exe",
-            "hash": "0CED4CAD149026182CBFB7BF3AA2B528FB800A7A81B3261F95055F01080EF435"
-        }
-    },
+    "url": "https://github.com/adamyg/grief/releases/download/3.2.2-build24/grwin32-build24-setup.exe",
+    "hash": "0CED4CAD149026182CBFB7BF3AA2B528FB800A7A81B3261F95055F01080EF435",
     "autoupdate": {
-        "architecture": {
-            "32bit": {
-                "_comment": "See lib.autoupdate.ps1 - $versionVariables",
-                "url": "https://github.com/adamyg/grief/releases/download/$version-build$matchBuild/$version-build$matchBuild-setup.exe"
-            }
-        }
+        "_comment": "See lib.autoupdate.ps1 - $versionVariables",
+        "url": "https://github.com/adamyg/grief/releases/download/$version-build$matchBuild/$version-build$matchBuild-setup.exe"
     },
     "bin": [
         "bin\\gr.exe"
