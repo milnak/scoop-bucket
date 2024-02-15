@@ -6,25 +6,27 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/jjazzboss/JJazzLab/releases/download/4.0.2/JJazzLab-4.0.2-win-x64-setup.exe",
-            "hash": ""
+            "hash": "A8031DA8F6E87C31B73720CB0A83048D9D876356268A65C37DBE6ED89057A0C1"
         }
     },
-    "checkver": {
-        "github": "https://github.com/jjazzboss/JJazzLab"
-    },
-    "hash": "A8031DA8F6E87C31B73720CB0A83048D9D876356268A65C37DBE6ED89057A0C1",
-    "innosetup": true,
-    "shortcuts": [
-        [
-            "deadlink.exe",
-            "AM-DeadLink"
-        ]
-    ],
     "autoupdate": {
         "architecture": {
             "64bit": {
                 "url": "https://github.com/jjazzboss/JJazzLab/releases/download/$version/JJazzLab-$version-win-x64-setup.exe"
             }
         }
-    }
+    },
+    "checkver": {
+        "github": "https://github.com/jjazzboss/JJazzLab"
+    },
+    "innosetup": true,
+    "notes": [
+        "Can add songs at https://www.jjazzlab.org/en/resources/"
+    ],
+    "shortcuts": [
+        [
+            "deadlink.exe",
+            "AM-DeadLink"
+        ]
+    ]
 }
