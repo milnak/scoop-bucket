@@ -64,9 +64,9 @@ To get file hash for "hash" field:
 
 Links:
 
-[Buckets Wiki](https://github.com/ScoopInstaller/Scoop/wiki/Buckets)
-
 [App Manifests Wiki](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
+
+[Buckets Wiki](https://github.com/ScoopInstaller/Scoop/wiki/Buckets)
 
 [Main Bucket](https://github.com/ScoopInstaller/Main/tree/master/bucket)
 

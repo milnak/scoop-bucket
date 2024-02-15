@@ -20,6 +20,9 @@
             }
         }
     },
+    "bin": [
+        "bin\\gr.exe"
+    ],
     "checkver": {
         "_comment": "Convert '3.2.2 - build-24' to '3.2.2.24'",
         "github": "https://github.com/adamyg/grief",
