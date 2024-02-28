@@ -6,12 +6,8 @@
         "identifier": "Proprietary",
         "url": "https://community.musictribe.com/terms-of-use"
     },
-    "architecture": {
-        "32bit": {
-            "url": "https://mediadl.musictribe.com/download/software/behringer/synthTool/SYNTHTRIBE_V2.6.9-Windows.zip",
-            "hash": "70599092240C50B1596970D57E5A29507FCEA124315F97135E257DFFABF7F533"
-        }
-    },
+    "url": "https://mediadl.musictribe.com/download/software/behringer/synthTool/SYNTHTRIBE_V2.6.9-Windows.zip",
+    "hash": "70599092240C50B1596970D57E5A29507FCEA124315F97135E257DFFABF7F533",
     "extract_dir": "SYNTHTRIBE269",
     "checkver": {
         "script": [
@@ -23,11 +19,7 @@
         "regex": "([\\d.]+)"
     },
     "autoupdate": {
-        "architecture": {
-            "32bit": {
-                "url": "https://mediadl.musictribe.com/download/software/behringer/synthTool/SYNTHTRIBE_V$version-Windows.zip"
-            }
-        },
+        "url": "https://mediadl.musictribe.com/download/software/behringer/synthTool/SYNTHTRIBE_V$version-Windows.zip",
         "extract_dir": "SYNTHTRIBE V$version(Windows)/SYNTHTRIBE V$version(Windows)_Signed"
     }
 }
