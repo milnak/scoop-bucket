@@ -8,7 +8,7 @@
     },
     "url": "https://mediadl.musictribe.com/download/software/behringer/synthTool/SYNTHTRIBE_V2.6.9-Windows.zip",
     "hash": "70599092240C50B1596970D57E5A29507FCEA124315F97135E257DFFABF7F533",
-    "extract_dir": "SYNTHTRIBE269",
+    "extract_dir": "SYNTHTRIBE V2.6.9(Windows)/SYNTHTRIBE V2.6.9(Windows)_Signed",
     "checkver": {
         "script": [
             "$url = 'https://www.behringer.com/.rest/musictribe/v1/products/media-library?brandName=behringer&modelCode=P0DTD'",
