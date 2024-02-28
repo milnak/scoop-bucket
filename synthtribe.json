@@ -8,7 +8,16 @@
     },
     "url": "https://mediadl.musictribe.com/download/software/behringer/synthTool/SYNTHTRIBE_V2.6.9-Windows.zip",
     "hash": "70599092240C50B1596970D57E5A29507FCEA124315F97135E257DFFABF7F533",
-    "extract_dir": "SYNTHTRIBE V2.6.9(Windows)/SYNTHTRIBE V2.6.9(Windows)_Signed",
+    "extract_dir": "SYNTHTRIBE V2.6.9(Windows)\\SYNTHTRIBE V2.6.9(Windows)_Signed",
+    "pre_install": [
+        "Get-ChildItem \"$dir\\SYNTHTRIBE*.exe\" | Rename-Item -NewName 'SYNTHTRIBE.exe'"
+    ],
+    "shortcuts": [
+        [
+            "SYNTHTRIBE.exe",
+            "SYNTHTRIBE"
+        ]
+    ],
     "checkver": {
         "script": [
             "$url = 'https://www.behringer.com/.rest/musictribe/v1/products/media-library?brandName=behringer&modelCode=P0DTD'",
@@ -20,6 +29,6 @@
     },
     "autoupdate": {
         "url": "https://mediadl.musictribe.com/download/software/behringer/synthTool/SYNTHTRIBE_V$version-Windows.zip",
-        "extract_dir": "SYNTHTRIBE V$version(Windows)/SYNTHTRIBE V$version(Windows)_Signed"
+        "extract_dir": "SYNTHTRIBE V$version(Windows)\\SYNTHTRIBE V$version(Windows)_Signed"
     }
 }
