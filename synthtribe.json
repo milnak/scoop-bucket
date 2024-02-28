@@ -10,7 +10,6 @@
     "hash": "70599092240C50B1596970D57E5A29507FCEA124315F97135E257DFFABF7F533",
     "extract_dir": "SYNTHTRIBE V2.6.9(Windows)\\SYNTHTRIBE V2.6.9(Windows)_Signed",
     "pre_install": [
-        "Remove-Item \"$dir\\*.md5\"",
         "Get-ChildItem \"$dir\\SYNTHTRIBE*.exe\" | Rename-Item -NewName 'SYNTHTRIBE.exe'"
     ],
     "shortcuts": [
@@ -20,6 +19,7 @@
         ]
     ],
     "checkver": {
+        "_": "Found this path using dev tools while loading https://www.behringer.com/product.html?modelCode=P0DTD",
         "script": [
             "$url = 'https://www.behringer.com/.rest/musictribe/v1/products/media-library?brandName=behringer&modelCode=P0DTD'",
             "$json = $(Invoke-WebRequest -Headers $head $url).Content | ConvertFrom-Json",
