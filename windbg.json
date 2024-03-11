@@ -25,10 +25,10 @@
     "checkver": {
         "url": "https://learn.microsoft.com/en-us/windows-hardware/drivers/debuggercmds/windbg-release-notes",
         "regex": "<h2 id=\"\\d+\">(?<major>\\d{1,5})\\.(?<minor>\\d{1,5})\\.(?<build>\\d{1,5})\\.(?<revision>\\d{1,5})<\/h2>",
-        "replace": "${major}-${minor}-${build}-${revision}"
+        "replace": "${major}.${minor}.${build}.${revision}"
 
     },
     "autoupdate": {
-        "url": "https://windbg.download.prss.microsoft.com/dbazure/prod/$version/windbg.msixbundle#/dl.7z"
+        "url": "https://windbg.download.prss.microsoft.com/dbazure/prod/$matchMajor-$matchMinor-$matchBuild-$matchRevision/windbg.msixbundle#/dl.7z"
     }
 }
