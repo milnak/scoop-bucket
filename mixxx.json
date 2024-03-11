@@ -10,7 +10,12 @@
         }
     },
     "extract_dir": "Mixxx",
-    "bin": "mixxx.exe",
+    "shortcuts": [
+        [
+            "mixxx.exe",
+            "Mixxx"
+        ]
+    ],
     "checkver": {
         "github": "https://github.com/mixxxdj/mixxx"
     },
