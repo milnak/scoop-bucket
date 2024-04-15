@@ -1,0 +1,20 @@
+{
+    "version": "1.6",
+    "description": "Portable, simple and fast installer for Visual Studio Build Tools.",
+    "homepage": "https://github.com/Data-Oriented-House/PortableBuildTools",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Data-Oriented-House/PortableBuildTools/releases/download/v1.6/PortableBuildTools.exe",
+            "hash": "48AFCC488757229CDADF1BC38CAF05A7617B35DF535E0EBB08DC8ECF8A8F2A45"
+        }
+    },
+    "bin": "PortableBuildTools.exe",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Data-Oriented-House/PortableBuildTools/releases/download/v$version/PortableBuildTools.exe"
+            }
+        }
+    }
+}
