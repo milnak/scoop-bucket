@@ -20,7 +20,7 @@
     "checkver": {
         "github": "https://github.com/LesFerch/WinSetView"
     },
-    "extract_dir": "WinSetView-2.91",
+    "extract_dir": "WinSetView-$version",
     "shortcuts": [
         [
             "WinSetView.exe",
