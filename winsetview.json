@@ -1,12 +1,12 @@
 {
-    "version": "2.91",
+    "version": "2.96",
     "description": "Tool that will let you easily set File Explorer default folder views.",
     "homepage": "https://github.com/LesFerch/WinSetView",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/LesFerch/WinSetView/archive/refs/tags/2.91.zip",
-            "hash": "3C35A4843C2653035A375E85A6ED2E8B0DBD767C830F3760E3B652C17188FD1C"
+            "url": "https://github.com/LesFerch/WinSetView/archive/refs/tags/2.96.zip",
+            "hash": "c97af9181117e70801ccb26c603e6a898636b52b552f3f59b7f3f517b914c338"
         }
     },
     "autoupdate": {
@@ -20,7 +20,7 @@
     "checkver": {
         "github": "https://github.com/LesFerch/WinSetView"
     },
-    "extract_dir": "WinSetView-2.91",
+    "extract_dir": "WinSetView-2.96",
     "shortcuts": [
         [
             "WinSetView.exe",

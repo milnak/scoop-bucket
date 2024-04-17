@@ -56,6 +56,8 @@ To verify update scripts:
 ~\scoop\apps\scoop\current\bin\checkver.ps1 -App .\winsetview.json
 ```
 
+**Note:** "scoop update" will update the app when it detects a change in the manifest in the upstream bucket repository. It has nothing to do with checkver. "autoupdate" is just for checkver. You have to run checkver periodically to update the manifest. "Checkver -Update" will update the manifest with new version to be pushed to repository.
+
 To get file hash for "hash" field:
 
 ```PowerShell

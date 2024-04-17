@@ -1,5 +1,5 @@
 {
-    "version": "5.0",
+    "version": "6.0",
     "description": "Check URLs for dead links and redirections.",
     "homepage": "https://www.aignes.com/deadlink.htm",
     "license": "Freeware",
@@ -10,7 +10,7 @@
         "url": "https://www.aignes.com/deadlink.htm",
         "regex": "<b class=\"medium\">AM-DeadLink (\\d+\\.\\d+)<\\/b><br>"
     },
-    "hash": "D49DC17336959FAE92BCD0DD0FC241179731899221CA25098AC9BFB554D47E25",
+    "hash": "5fdb25bad6c4033bae268031d222c734be30591b954f9c2939dc7639c2c184af",
     "innosetup": true,
     "shortcuts": [
         [
