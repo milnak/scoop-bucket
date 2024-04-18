@@ -1,5 +1,5 @@
 {
-    "comment": "derived from 'winget show Microsoft.windbg'",
+    "$comment": "derived from 'winget show Microsoft.windbg'",
     "version": "1.2402.24001.0",
     "description": "WinDbg is a debugger that can be used to analyze crash dumps, debug live user-mode and kernel-mode code, and examine CPU registers and memory.",
     "homepage": "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/",
@@ -31,9 +31,8 @@
     ],
     "checkver": {
         "url": "https://learn.microsoft.com/en-us/windows-hardware/drivers/debuggercmds/windbg-release-notes",
-        "regex": "<h2 id=\"\\d+\">(?<major>\\d{1,5})\\.(?<minor>\\d{1,5})\\.(?<build>\\d{1,5})\\.(?<revision>\\d{1,5})<\/h2>",
+        "regex": "<h2 id=\"\\d+\">(?<major>\\d{1,5})\\.(?<minor>\\d{1,5})\\.(?<build>\\d{1,5})\\.(?<revision>\\d{1,5})</h2>",
         "replace": "${major}.${minor}.${build}.${revision}"
-
     },
     "autoupdate": {
         "url": "https://windbg.download.prss.microsoft.com/dbazure/prod/$matchMajor-$matchMinor-$matchBuild-$matchRevision/windbg.msixbundle#/dl.7z"

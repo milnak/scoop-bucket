@@ -9,6 +9,16 @@
             "hash": "c97af9181117e70801ccb26c603e6a898636b52b552f3f59b7f3f517b914c338"
         }
     },
+    "extract_dir": "WinSetView-2.96",
+    "shortcuts": [
+        [
+            "WinSetView.exe",
+            "WinSetView"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/LesFerch/WinSetView"
+    },
     "autoupdate": {
         "architecture": {
             "64bit": {
@@ -16,15 +26,5 @@
             }
         },
         "extract_dir": "WinSetView-$version"
-    },
-    "checkver": {
-        "github": "https://github.com/LesFerch/WinSetView"
-    },
-    "extract_dir": "WinSetView-2.96",
-    "shortcuts": [
-        [
-            "WinSetView.exe",
-            "WinSetView"
-        ]
-    ]
+    }
 }
