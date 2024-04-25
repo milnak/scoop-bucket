@@ -12,7 +12,7 @@
     "notes": [
         "Download wordlist from https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/10-million-password-list-top-100000.txt",
         "",
-        "To recover ZIP file password:"
+        "To recover ZIP file password:",
         "./run/zip2john.exe ./file.zip >./file.zip.txt",
         "./run/john --wordlist=10-million-password-list-top-100000.txt ./file.zip.txt"
     ],
