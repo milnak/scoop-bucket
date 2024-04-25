@@ -1,6 +1,6 @@
 # Milnak's Scoop Bucket
 
-Note that most of these are in progress. Do not rely on these to work!
+Stuff that I use that isn't in the official scoop buckets.
 
 ## Add bucket
 
@@ -56,7 +56,13 @@ To verify update scripts:
 ~\scoop\apps\scoop\current\bin\checkver.ps1 -App .\winsetview.json
 ```
 
-**Note:** "scoop update" will update the app when it detects a change in the manifest in the upstream bucket repository. It has nothing to do with checkver. "autoupdate" is just for checkver. You have to run checkver periodically to update the manifest. "Checkver -Update" will update the manifest with new version to be pushed to repository.
+## Scoop update
+
+"scoop update" will update the app when it detects a change in the manifest in the upstream bucket repository. It has nothing to do with checkver. "autoupdate" is just for checkver. You have to run checkver periodically to update the manifest.
+
+"checkver.ps1 -Update" will update the manifest with new version and hash to be pushed to repository.
+
+## Get file hash
 
 To get file hash for "hash" field:
 
