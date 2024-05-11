@@ -11,7 +11,7 @@
     "$lessmsi_bug": "lessmsi.exe x doesn't work -- see https://github.com/activescott/lessmsi/issues/195",
     "$expand_msiarchive": "see https://github.com/ScoopInstaller/Scoop/blob/4a31bd330244f7f89f16208cdddda3f9edac2d65/lib/decompress.ps1#L127",
     "pre_install": [
-        "Expand-MsiArchive -Path \"$dir\\extracted\\MOXSETUP.MSI\" -DestinationPath \"$dir\\extracted\\msi\" -ExtractDir 'SourceDir'"
+        "Expand-MsiArchive -Path \"$dir\\extracted\\MOXSETUP.MSI\" -DestinationPath \"$dir\\extracted\\msi\""
     ],
     "$post_install": "Remove-Item \"$dir\\extracted\" -Force -Recurse",
     "shortcuts": [
