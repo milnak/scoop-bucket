@@ -5,11 +5,16 @@
     "$url": "midixse.exe is a zipped MSI file.",
     "url": "http://www.midiox.com/zip/midioxse.exe#/dl.zip",
     "hash": "16469593531764AEEDA2FDE8819B894B76243E233FD009D732193DAA9DB72385",
-    "extract_to": "MSITEMP",
+    "extract_to": "extracted",
     "$pre_install": "ExtractDir determined using 'lessmsi.exe o MOXSETUP.MSI'.",
-    "pre_install": "Expand-MsiArchive \"$dir\\MSITEMP\\MOXSETUP.MSI\" -DestinationPath \"$dir\" -ExtractDir 'SourceDir'",
-    "post_install": "Remove-Item \"$dir\\MSITEMP\" -Force -Recurse",
-    "$$shortcuts": [
+    "depends": "lessmsi",
+    "$lessmsi_bug": "lessmsi.exe x doesn't work -- see https://github.com/activescott/lessmsi/issues/195",
+    "$expand_msiarchive": "see https://github.com/ScoopInstaller/Scoop/blob/4a31bd330244f7f89f16208cdddda3f9edac2d65/lib/decompress.ps1#L127",
+    "pre_install": [
+        "Expand-MsiArchive -Path \"$dir\\extracted\\MOXSETUP.MSI\" -DestinationPath \"$dir\\extracted\\msi\" -ExtractDir 'SourceDir'"
+    ],
+    "$post_install": "Remove-Item \"$dir\\extracted\" -Force -Recurse",
+    "shortcuts": [
         [
             "midiox.exe",
             "MIDI-OX"
