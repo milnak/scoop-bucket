@@ -19,9 +19,7 @@
             "GRIEF"
         ]
     ],
-    "notes": [
-        "GRIEF Quick Start and Programmers Guide @ https://github.com/adamyg/grief/blob/master/griefprogguide.pdf"
-    ],
+    "notes": "GRIEF Quick Start and Programmers Guide @ https://github.com/adamyg/grief/blob/master/griefprogguide.pdf",
     "checkver": {
         "github": "https://github.com/adamyg/grief",
         "regex": "(?<version>[\\d.]+) - build-(?<build>\\d+)",
