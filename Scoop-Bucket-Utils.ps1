@@ -1,6 +1,6 @@
 Param(
     [Parameter(Mandatory)]
-    [ValidateSet('CheckUrls', 'CheckVer', 'FormatJson', 'MissingCheckVer', 'Tests')]
+    [ValidateSet('CheckHashes','CheckUrls', 'CheckVer', 'Describe', 'FormatJson', 'MissingCheckVer', 'Tests')]
     $Utility
 )
 
@@ -12,20 +12,34 @@ if (!$env:SCOOP_HOME) {
 ''
 
 switch ($Utility) {
+    'CheckHashes' {
+        # Check if ALL urls inside manifest have correct hashes.
+        # Can pass "-Update" to update mismatched hashes.
+        . "$env:SCOOP_HOME/bin/checkhashes.ps1" -Dir './bucket' -SkipCorrect
+    }
     'CheckUrls' {
-        . "$env:SCOOP_HOME/bin/checkurls.ps1" -Dir './bucket'
+        # List manifests which do not have valid URLs.
+        . "$env:SCOOP_HOME/bin/checkurls.ps1" -Dir './bucket' -SkipValid
     }
     'CheckVer' {
-        . "$env:SCOOP_HOME/bin/checkver.ps1" -Dir './bucket'
+        # Check manifest for a newer version.
+        # Can pass "-Update" to update given manifest.
+        . "$env:SCOOP_HOME/bin/checkver.ps1" -Dir './bucket' -SkipUpdated
+    }
+    'Describe' {
+        # Search for application description (typically 'og:description') on homepage.
+        . "$env:SCOOP_HOME/bin/describe.ps1" -Dir './bucket'
     }
     'FormatJson' {
+        # Format manifest.
         . "$env:SCOOP_HOME/bin/formatjson.ps1" -Dir './bucket'
     }
     'MissingCheckVer' {
-        . "$env:SCOOP_HOME/bin/missing-checkver.ps1" -Dir './bucket'
+        # Check if manifest contains checkver and autoupdate property.
+        . "$env:SCOOP_HOME/bin/missing-checkver.ps1" -Dir './bucket' -SkipSupported
     }
     'Tests' {
-        # To remove the built-in (old) version of Pester:
+        # First, remove the built-in (old) version of Pester:
         #
         # $module = "C:\Program Files\WindowsPowerShell\Modules\Pester"
         # & takeown.exe /F $module /A /R

@@ -15,5 +15,8 @@
     "checkver": {
         "url": "https://www.aignes.com/deadlink.htm",
         "regex": "<b class=\"medium\">AM-DeadLink (\\d+\\.\\d+)<\\/b><br>"
+    },
+    "autoupdate": {
+        "url": "https://www.aignes.info/download/dlsetup.exe"
     }
 }
