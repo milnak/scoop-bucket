@@ -70,7 +70,48 @@ To get file hash for "hash" field:
 (Get-FileHash -Algorithm SHA256 '.\xscsetup-9.40.0.exe').Hash
 ```
 
-Links:
+## Manifest Notes
+
+### chordpro.json
+
+checkver.github uses regex '/releases/tag/(?:v|V)?([\\d.]+)', but ChordPro uses R6.050 !
+
+minor is '050' but installer uses '50'
+
+### clonespy.json
+
+This is a nullsoft installer, which is 7zip-wrapped.
+
+### ctrlr.json
+
+Ctrlr-5.3.201.exe is a nullsoft (7-zip) installer.
+
+### grief.json
+
+Convert '3.2.2 - build-24' to '3.2.2.24'.
+
+See ~/scoop/apps/scoop/current/lib/autoupdate.ps1 - $versionVariables.
+
+
+### knobkraftorm.json
+
+innounp.exe -v ./knobkraft_orm_setup_2.3.0.exe
+
+### midi-ox.json
+
+midioxse.exe is a self-extracting zip containing a MSI file.
+
+Expand-MsiArchive - see [this](https://github.com/ScoopInstaller/Scoop/blob/4a31bd330244f7f89f16208cdddda3f9edac2d65/lib/decompress).ps1#L127
+
+### synthtribe.json
+
+Found this path using dev tools while loading [this](https://www.behringer.com/product.html?modelCode=0722-ABR).
+
+### windbg.json
+
+Derived from 'winget show Microsoft.windbg'.
+
+## References
 
 [App Manifests Wiki](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
 

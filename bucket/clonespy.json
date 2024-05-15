@@ -1,5 +1,4 @@
 {
-    "$comment": "This is a nullsoft installer, which is 7zip-wrapped",
     "version": "3.43",
     "description": "A free duplicate file cleanup tool for Windows© XP/Vista/7/8/8.1/10.",
     "homepage": "https://clonespy.com/",
