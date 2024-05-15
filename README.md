@@ -101,7 +101,7 @@ innounp.exe -v ./knobkraft_orm_setup_2.3.0.exe
 
 midioxse.exe is a self-extracting zip containing a MSI file.
 
-Expand-MsiArchive - see [this](https://github.com/ScoopInstaller/Scoop/blob/4a31bd330244f7f89f16208cdddda3f9edac2d65/lib/decompress).ps1#L127
+Expand-MsiArchive - see [this](https://github.com/ScoopInstaller/Scoop/blob/4a31bd330244f7f89f16208cdddda3f9edac2d65/lib/decompress.ps1#L127).
 
 ### synthtribe.json
 
