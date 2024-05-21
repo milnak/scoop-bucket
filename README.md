@@ -6,6 +6,8 @@ Stuff that I use that isn't in the official scoop buckets.
 
 `scoop bucket add milnak https://github.com/milnak/scoop-bucket`
 
+For development purposes, this repo should be cloned into `~/scoop/buckets/milnak`.
+
 ## Check that it works
 
 `scoop bucket list`
