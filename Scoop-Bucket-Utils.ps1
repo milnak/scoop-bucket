@@ -1,10 +1,31 @@
-# CheckHashes - Check if ALL urls inside manifest have correct hashes.
-# CheckUrls - List manifests which do not have valid URLs.
-# CheckVer - Check manifest for a newer version.
-# FormatJson - Format manifest.
-# MissingCheckVer - Check if manifest contains checkver and autoupdate property.
-# Tests - Run manifest tests.
+<#
+.SYNOPSIS
+    Utilities to assist with developing a scoop bucket.
+.DESCRIPTION
+    Wrapper for built-in scoop utilities.
+.NOTES
+    Information or caveats about the function e.g. 'This function is not supported in Linux'
+.LINK
+    See tool sources at https://github.com/ScoopInstaller/Scoop/tree/master/bin
+.EXAMPLE
+    ./Scoop-Bucket-Utils.ps1 -Utilities CheckVer
+    Check manifests for updated versions.
+.EXAMPLE
+    ./Scoop-Bucket-Utils.ps1 -Utilities Tests
+    Run manifest tests on all manifests in this folder.
+.EXAMPLE
+    ./Scoop-Bucket-Utils.ps1 -All
+    Run all of the utilities on all manifests in this folder.
+#>
+
 Param(
+    # CheckHashes - Check if ALL urls inside manifest have correct hashes.
+    # CheckUrls - List manifests which do not have valid URLs.
+    # CheckVer - Check manifest for a newer version.
+    # FormatJson - Format manifest.
+    # MissingCheckVer - Check if manifest contains checkver and autoupdate property.
+    # Tests - Run manifest tests.
+    # All - Run all tests.
     [Parameter(Mandatory)]
     [ValidateSet('CheckHashes', 'CheckUrls', 'CheckVer', 'Describe', 'FormatJson', 'MissingCheckVer', 'Tests')]
     [string[]]$Utilities
@@ -28,7 +49,7 @@ foreach ($Utility in $Utilities) {
         }
         'CheckVer' {
             # Can pass "-Update" to update given manifest.
-            . "$env:SCOOP_HOME/bin/checkver.ps1" -Dir './bucket' -SkipUpdated
+            . "$env:SCOOP_HOME/bin/checkver.ps1" -Dir './bucket'
         }
         'Describe' {
             . "$env:SCOOP_HOME/bin/describe.ps1" -Dir './bucket'
