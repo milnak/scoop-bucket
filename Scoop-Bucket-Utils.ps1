@@ -10,6 +10,7 @@
 .EXAMPLE
     ./Scoop-Bucket-Utils.ps1 -Utilities CheckVer
     Check manifests for updated versions.
+
 .EXAMPLE
     ./Scoop-Bucket-Utils.ps1 -Utilities Tests
     Run manifest tests on all manifests in this folder.
@@ -25,7 +26,6 @@ Param(
     # FormatJson - Format manifest.
     # MissingCheckVer - Check if manifest contains checkver and autoupdate property.
     # Tests - Run manifest tests.
-    # All - Run all tests.
     [Parameter(Mandatory)]
     [ValidateSet('CheckHashes', 'CheckUrls', 'CheckVer', 'Describe', 'FormatJson', 'MissingCheckVer', 'Tests')]
     [string[]]$Utilities
@@ -48,8 +48,8 @@ foreach ($Utility in $Utilities) {
             . "$env:SCOOP_HOME/bin/checkurls.ps1" -Dir './bucket' -SkipValid
         }
         'CheckVer' {
-            # Can pass "-Update" to update given manifest.
-            . "$env:SCOOP_HOME/bin/checkver.ps1" -Dir './bucket'
+            # "-Update": update given manifest.
+            . "$env:SCOOP_HOME/bin/checkver.ps1" -Update -Dir './bucket'
         }
         'Describe' {
             . "$env:SCOOP_HOME/bin/describe.ps1" -Dir './bucket'
