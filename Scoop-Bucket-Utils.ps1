@@ -8,15 +8,12 @@
 .LINK
     See tool sources at https://github.com/ScoopInstaller/Scoop/tree/master/bin
 .EXAMPLE
-    ./Scoop-Bucket-Utils.ps1 -Utilities CheckVer
-    Check manifests for updated versions.
+    ./Scoop-Bucket-Utils.ps1 -Utility CheckHashes,CheckUrls,CheckVer,FormatJson,MissingCheckVer -App cemu
+    Runs several utilities on 'cemu' manifest.
 
 .EXAMPLE
-    ./Scoop-Bucket-Utils.ps1 -Utilities Tests
+    ./Scoop-Bucket-Utils.ps1 -Utility Tests
     Run manifest tests on all manifests in this folder.
-.EXAMPLE
-    ./Scoop-Bucket-Utils.ps1 -All
-    Run all of the utilities on all manifests in this folder.
 #>
 
 Param(
@@ -28,37 +25,43 @@ Param(
     # Tests - Run manifest tests.
     [Parameter(Mandatory)]
     [ValidateSet('CheckHashes', 'CheckUrls', 'CheckVer', 'Describe', 'FormatJson', 'MissingCheckVer', 'Tests')]
-    [string[]]$Utilities
+    [string[]]$Utility,
+    # App to check (optional).
+    [string]$App
 )
 
 if (!$env:SCOOP_HOME) {
     $env:SCOOP_HOME = Resolve-Path (scoop.ps1 prefix scoop)
 }
 
-foreach ($Utility in $Utilities) {
-    "Running $Utility ..."
+foreach ($UtilityName in $Utility) {
+    "Running $UtilityName ..."
     ''
 
-    switch ($Utility) {
+    $UtilityNameArguments = @{ 'Dir' = './bucket' }
+    if ($App) {
+        $UtilityNameArguments += @{ 'App' = $App }
+    }
+    switch ($UtilityName) {
         'CheckHashes' {
-            # Can pass "-Update" to update mismatched hashes.
-            . "$env:SCOOP_HOME/bin/checkhashes.ps1" -Dir './bucket' -SkipCorrect
+            # "-Update": update mismatched hashes.
+            . "$env:SCOOP_HOME/bin/checkhashes.ps1" @UtilityNameArguments
         }
         'CheckUrls' {
-            . "$env:SCOOP_HOME/bin/checkurls.ps1" -Dir './bucket' -SkipValid
+            . "$env:SCOOP_HOME/bin/checkurls.ps1" @UtilityNameArguments
         }
         'CheckVer' {
             # "-Update": update given manifest.
-            . "$env:SCOOP_HOME/bin/checkver.ps1" -Update -Dir './bucket'
+            . "$env:SCOOP_HOME/bin/checkver.ps1" -Update @UtilityNameArguments
         }
         'Describe' {
-            . "$env:SCOOP_HOME/bin/describe.ps1" -Dir './bucket'
+            . "$env:SCOOP_HOME/bin/describe.ps1" @UtilityNameArguments
         }
         'FormatJson' {
-            . "$env:SCOOP_HOME/bin/formatjson.ps1" -Dir './bucket'
+            . "$env:SCOOP_HOME/bin/formatjson.ps1" @UtilityNameArguments
         }
         'MissingCheckVer' {
-            . "$env:SCOOP_HOME/bin/missing-checkver.ps1" -Dir './bucket' -SkipSupported
+            . "$env:SCOOP_HOME/bin/missing-checkver.ps1" @UtilityNameArguments
         }
         'Tests' {
             # First, remove the built-in (old) version of Pester:
