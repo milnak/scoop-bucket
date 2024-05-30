@@ -11,6 +11,11 @@
             "CEmu"
         ]
     ],
+    "notes": [
+        "TI-84 CE rom: https://archive.org/details/TI84CE",
+        "              Copy-Item 'TI-84 CE.rom' ~/scoop/apps/cemu/current",
+        "TI-84 Plus Guidebook: https://education.ti.com/html/eguides/graphing/84Plus/EN/TI-84-Plus-guidebook-en.html"
+    ],
     "checkver": {
         "github": "https://github.com/CE-Programming/CEmu",
         "regex": "tag/v([\\d.]+)"
