@@ -12,6 +12,10 @@
     Runs several utilities on 'cemu' manifest.
 
 .EXAMPLE
+    ./Scoop-Bucket-Utils.ps1 -Utility CheckVer
+    Checks for updated versions of apps in manifests. Updates manifest(s) if needed.
+
+.EXAMPLE
     ./Scoop-Bucket-Utils.ps1 -Utility Tests
     Run manifest tests on all manifests in this folder.
 #>
