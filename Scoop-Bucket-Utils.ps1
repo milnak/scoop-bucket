@@ -24,6 +24,7 @@ Param(
     # CheckHashes - Check if ALL urls inside manifest have correct hashes.
     # CheckUrls - List manifests which do not have valid URLs.
     # CheckVer - Check manifest for a newer version.
+    # Describe - Retrieve description from website's metadata.
     # FormatJson - Format manifest.
     # MissingCheckVer - Check if manifest contains checkver and autoupdate property.
     # Tests - Run manifest tests.
@@ -31,7 +32,9 @@ Param(
     [ValidateSet('CheckHashes', 'CheckUrls', 'CheckVer', 'Describe', 'FormatJson', 'MissingCheckVer', 'Tests')]
     [string[]]$Utility,
     # App to check (optional).
-    [string]$App
+    [string]$App,
+    # Directory containing manifests.
+    [string]$Dir = './bucket'
 )
 
 if (!$env:SCOOP_HOME) {
@@ -42,10 +45,9 @@ foreach ($UtilityName in $Utility) {
     "Running $UtilityName ..."
     ''
 
-    $UtilityNameArguments = @{ 'Dir' = './bucket' }
-    if ($App) {
-        $UtilityNameArguments += @{ 'App' = $App }
-    }
+    $UtilityNameArguments = @{ 'Dir' = $Dir }
+    if ($App) { $UtilityNameArguments += @{ 'App' = $App } }
+
     switch ($UtilityName) {
         'CheckHashes' {
             # "-Update": update mismatched hashes.
@@ -59,6 +61,13 @@ foreach ($UtilityName in $Utility) {
             . "$env:SCOOP_HOME/bin/checkver.ps1" -Update @UtilityNameArguments
         }
         'Describe' {
+            # Get-ChildItem $Dir -Filter '*.json' -File `
+            # | ForEach-Object {
+            #     $d=Get-Content $_ | ConvertFrom-Json | Select-Object -ExpandProperty description
+            #     "$($_.BaseName):"
+            #     Write-Host -ForegroundColor Green "  $d" }
+            # ''
+
             . "$env:SCOOP_HOME/bin/describe.ps1" @UtilityNameArguments
         }
         'FormatJson' {
