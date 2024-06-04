@@ -11,7 +11,7 @@
     "extract_dir": "SYNTHTRIBE_V2.7.5-Windows",
     "shortcuts": [
         [
-            "SYNTHTRIBE_V2.7.5.exe",
+            "SYNTHTRIBE_2.7.5.exe",
             "SYNTHTRIBE"
         ]
     ],
@@ -29,7 +29,7 @@
         "extract_dir": "SYNTHTRIBE_V$version-Windows",
         "shortcuts": [
             [
-                "SYNTHTRIBE_V$version.exe",
+                "SYNTHTRIBE_$version.exe",
                 "SYNTHTRIBE"
             ]
         ]
