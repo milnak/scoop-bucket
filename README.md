@@ -94,7 +94,6 @@ Convert '3.2.2 - build-24' to '3.2.2.24'.
 
 See ~/scoop/apps/scoop/current/lib/autoupdate.ps1 - $versionVariables.
 
-
 ### knobkraftorm.json
 
 innounp.exe -v ./knobkraft_orm_setup_2.3.0.exe
@@ -108,6 +107,12 @@ Expand-MsiArchive - see [this](https://github.com/ScoopInstaller/Scoop/blob/4a31
 ### synthtribe.json
 
 Found this path using dev tools while loading [this](https://www.behringer.com/product.html?modelCode=0722-ABR).
+
+### usbdeview.json
+
+This is a fixed version of the manifest that's in nirsoft bucket. scoop is case-sensitive on filenames!
+
+Also, scoop persist requires a file to exist in $dir at install time, or it will be assumed that the object is a folder, so New-Item is used to create an empty file.
 
 ### windbg.json
 
