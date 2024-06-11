@@ -2,13 +2,13 @@
 
 Stuff that I use that isn't in the official scoop buckets.
 
-## Add bucket
+## Getting Started
+
+### Add bucket
 
 `scoop bucket add milnak https://github.com/milnak/scoop-bucket`
 
-For development purposes, this repo should be cloned into `~/scoop/buckets/milnak`.
-
-## Check that it works
+### Check that it works
 
 `scoop bucket list`
 
@@ -20,7 +20,7 @@ Name         Source                                         Updated             
 milnak       https://github.com/milnak/scoop-bucket         2/1/2024 11:43:26 AM          0
 ```
 
-## Search for app
+### Search for app
 
 `scoop search clonespy`
 
@@ -32,45 +32,13 @@ Name     Version Source Binaries
 CloneSpy 3.43    milnak
 ```
 
-## Install app
+### Install app
 
 `scoop install milnak/clonespy`
 
-## Run app
+### Run app
 
 `CloneSpy64.exe`
-
-## More Info
-
-To refresh bucket cache:
-
-```PowerShell
-scoop update
-```
-
-To verify update scripts:
-
-```PowerShell
-~\scoop\apps\scoop\current\bin\checkver.ps1 -Dir .
-
-# or
-
-~\scoop\apps\scoop\current\bin\checkver.ps1 -App .\winsetview.json
-```
-
-## Scoop update
-
-"scoop update" will update the app when it detects a change in the manifest in the upstream bucket repository. It has nothing to do with checkver. "autoupdate" is just for checkver. You have to run checkver periodically to update the manifest.
-
-"checkver.ps1 -Update" will update the manifest with new version and hash to be pushed to repository.
-
-## Get file hash
-
-To get file hash for "hash" field:
-
-```PowerShell
-(Get-FileHash -Algorithm SHA256 '.\xscsetup-9.40.0.exe').Hash
-```
 
 ## Manifest Notes
 
@@ -117,6 +85,38 @@ Also, scoop persist requires a file to exist in $dir at install time, or it will
 ### windbg.json
 
 Derived from 'winget show Microsoft.windbg'.
+
+## Development Notes
+
+For development purposes, this repo should be cloned into `~/scoop/buckets/milnak`.
+
+I've created a script "Scoop-Bucket-Utils.ps1" that wraps all of the relevant development scripts.  When adding a new script, run `./Scoop-Bucket-Utils.ps1 -Utility CheckHashes,CheckUrls,CheckVer,FormatJson,MissingCheckVer -App [manifest_name]` to verify manifest, then `./Scoop-Bucket-Utils.ps1 -Utility Tests` to run UTs.
+
+To refresh bucket cache:
+
+```PowerShell
+scoop update
+```
+
+To verify update scripts:
+
+```PowerShell
+~\scoop\apps\scoop\current\bin\checkver.ps1 -Dir .
+
+# or
+
+~\scoop\apps\scoop\current\bin\checkver.ps1 -App .\winsetview.json
+```
+
+"scoop update" will update the app when it detects a change in the manifest in the upstream bucket repository. It has nothing to do with checkver. "autoupdate" is just for checkver. You have to run checkver periodically to update the manifest.
+
+"checkver.ps1 -Update" will update the manifest with new version and hash to be pushed to repository.
+
+To get file hash for "hash" field:
+
+```PowerShell
+(Get-FileHash -Algorithm SHA256 '.\xscsetup-9.40.0.exe').Hash
+```
 
 ## References
 
