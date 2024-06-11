@@ -90,7 +90,7 @@ Ctrlr-5.3.201.exe is a nullsoft (7-zip) installer.
 
 ### grief.json
 
-Convert '3.2.2 - build-24' to '3.2.2.24'.
+"regex" will convert '/tag/3.2.3-build-26' to V='3.2.3', B='26'.
 
 See ~/scoop/apps/scoop/current/lib/autoupdate.ps1 - $versionVariables.
 
