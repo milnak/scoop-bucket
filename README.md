@@ -22,23 +22,23 @@ milnak       https://github.com/milnak/scoop-bucket         2/1/2024 11:43:26 AM
 
 ### Search for app
 
-`scoop search clonespy`
+`scoop search windbg`
 
 Should see something like:
 
 ```text
-Name     Version Source Binaries
-----     ------- ------ --------
-CloneSpy 3.43    milnak
+Name   Version        Source Binaries
+----   -------        ------ --------
+windbg 1.2402.24001.0 milnak
 ```
 
 ### Install app
 
-`scoop install milnak/clonespy`
+`scoop install milnak/windbg`
 
 ### Run app
 
-`CloneSpy64.exe`
+`windbg.exe`
 
 ## Manifest Notes
 
