@@ -58,9 +58,7 @@ Ctrlr-5.3.201.exe is a nullsoft (7-zip) installer.
 
 ### grief.json
 
-"regex" will convert '/tag/3.2.3-build-26' to V='3.2.3', B='26'.
-
-See ~/scoop/apps/scoop/current/lib/autoupdate.ps1 - $versionVariables.
+checkver.github uses regex '/releases/tag/(?:v|V)?([\\d.]+)', but grief uses '3.2.3-build-26'. "regex" will convert '/tag/3.2.3-build-26' to V='3.2.3', B='26'.
 
 ### knobkraftorm.json
 
@@ -92,25 +90,15 @@ For development purposes, this repo should be cloned into `~/scoop/buckets/milna
 
 I've created a script "Scoop-Bucket-Utils.ps1" that wraps all of the relevant development scripts.  When adding a new script, run `./Scoop-Bucket-Utils.ps1 -Utility CheckHashes,CheckUrls,CheckVer,FormatJson,MissingCheckVer -App [manifest_name]` to verify manifest, then `./Scoop-Bucket-Utils.ps1 -Utility Tests` to run UTs.
 
+See ~/scoop/apps/scoop/current/lib/autoupdate.ps1 - $versionVariables.
+
 To refresh bucket cache:
 
 ```PowerShell
 scoop update
 ```
 
-To verify update scripts:
-
-```PowerShell
-~\scoop\apps\scoop\current\bin\checkver.ps1 -Dir .
-
-# or
-
-~\scoop\apps\scoop\current\bin\checkver.ps1 -App .\winsetview.json
-```
-
 "scoop update" will update the app when it detects a change in the manifest in the upstream bucket repository. It has nothing to do with checkver. "autoupdate" is just for checkver. You have to run checkver periodically to update the manifest.
-
-"checkver.ps1 -Update" will update the manifest with new version and hash to be pushed to repository.
 
 To get file hash for "hash" field:
 
