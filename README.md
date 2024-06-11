@@ -58,7 +58,11 @@ Ctrlr-5.3.201.exe is a nullsoft (7-zip) installer.
 
 ### grief.json
 
-checkver.github uses regex '/releases/tag/(?:v|V)?([\\d.]+)', but grief uses '3.2.3-build-26'. "regex" will convert '/tag/3.2.3-build-26' to V='3.2.3', B='26'.
+checkver.github uses regex '/releases/tag/(?:v|V)?([\\d.]+)', but grief uses '3.2.3-build-26'.
+
+I did a 'view source' to find 'octolytics-dimension-repository_id', which I pass to the web request.
+
+See ~/scoop/apps/scoop/current/lib/autoupdate.ps1 - $versionVariables.
 
 ### knobkraftorm.json
 
@@ -89,8 +93,6 @@ Derived from 'winget show Microsoft.windbg'.
 For development purposes, this repo should be cloned into `~/scoop/buckets/milnak`.
 
 I've created a script "Scoop-Bucket-Utils.ps1" that wraps all of the relevant development scripts.  When adding a new script, run `./Scoop-Bucket-Utils.ps1 -Utility CheckHashes,CheckUrls,CheckVer,FormatJson,MissingCheckVer -App [manifest_name]` to verify manifest, then `./Scoop-Bucket-Utils.ps1 -Utility Tests` to run UTs.
-
-See ~/scoop/apps/scoop/current/lib/autoupdate.ps1 - $versionVariables.
 
 To refresh bucket cache:
 
