@@ -60,8 +60,6 @@ Ctrlr-5.3.201.exe is a nullsoft (7-zip) installer.
 
 checkver.github uses regex '/releases/tag/(?:v|V)?([\\d.]+)', but grief uses '3.2.3-build-26'.
 
-I did a 'view source' to find 'octolytics-dimension-repository_id', which I pass to the web request.
-
 See ~/scoop/apps/scoop/current/lib/autoupdate.ps1 - $versionVariables.
 
 ### knobkraftorm.json
