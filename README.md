@@ -78,6 +78,10 @@ I add a pbtdevenv.ps1 -- see [Create PowerShell environment script as well](http
 
 Need to create script as part of pre_install, not post_install as "bin" references it before post_install occurs.
 
+If msvc or SDK version changes, modify `msvc=` `sdk=` `$env:WindowsSDKVersion` and `$env:VCToolsInstallDir`.
+
+Not currently removing c:\BuildTools as part of uninstall.
+
 ### synthtribe.json
 
 Found this path using dev tools while loading [this](https://www.behringer.com/product.html?modelCode=0722-ABR).
