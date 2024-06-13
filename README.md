@@ -72,6 +72,12 @@ midioxse.exe is a self-extracting zip containing a MSI file.
 
 Expand-MsiArchive - see [this](https://github.com/ScoopInstaller/Scoop/blob/4a31bd330244f7f89f16208cdddda3f9edac2d65/lib/decompress.ps1#L127).
 
+### portable-build-tools.json
+
+I add a pbtdevenv.ps1 -- see [Create PowerShell environment script as well](https://github.com/Data-Oriented-House/PortableBuildTools/issues/6).
+
+Need to create script as part of pre_install, not post_install as "bin" references it before post_install occurs.
+
 ### synthtribe.json
 
 Found this path using dev tools while loading [this](https://www.behringer.com/product.html?modelCode=0722-ABR).
