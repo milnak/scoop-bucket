@@ -62,6 +62,10 @@ checkver.github uses regex '/releases/tag/(?:v|V)?([\\d.]+)', but grief uses '3.
 
 See ~/scoop/apps/scoop/current/lib/autoupdate.ps1 - $versionVariables.
 
+### jjazzlab.json
+
+Version is 4.1.0, but download path is "/4.1.0/JJazzLab-4.1.0a-win64-setup.exe".  Use api.github to get browser_download_url with a regex to match version ("4.1.0") and build ("4.1.0a").
+
 ### knobkraftorm.json
 
 innounp.exe -v ./knobkraft_orm_setup_2.3.0.exe
