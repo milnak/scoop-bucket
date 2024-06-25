@@ -84,6 +84,8 @@ Expand-MsiArchive - see [this](https://github.com/ScoopInstaller/Scoop/blob/4a31
 
 I add a pbtdevenv.ps1 -- see [Create PowerShell environment script as well](https://github.com/Data-Oriented-House/PortableBuildTools/issues/6).
 
+I converted the PowerShell script to JSON strings using "Get-Content 'pbtdevenv.ps1' | ConvertTo-Json".
+
 Need to create script as part of pre_install, not post_install as "bin" references it before post_install occurs.
 
 If msvc or SDK version changes, modify `msvc=` `sdk=` `$env:WindowsSDKVersion` and `$env:VCToolsInstallDir`.
