@@ -16,9 +16,7 @@
             "WinSetView"
         ]
     ],
-    "checkver": {
-        "github": "https://github.com/LesFerch/WinSetView"
-    },
+    "checkver": "github",
     "autoupdate": {
         "architecture": {
             "64bit": {

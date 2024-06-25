@@ -18,10 +18,7 @@
         "zip2john.exe ./file.zip >./file.zip.txt",
         "john.exe --wordlist=10-million-password-list-top-100000.txt ./file.zip.txt"
     ],
-    "checkver": {
-        "url": "https://www.openwall.com/john/",
-        "regex": "<a href=\"k/john-(.+)-win64.7z\">7z,"
-    },
+    "checkver": "<a href=\"k/john-(.+)-win64.7z\">7z,",
     "autoupdate": {
         "url": "https://www.openwall.com/john/k/john-$version-win64.7z"
     }

@@ -124,7 +124,9 @@ To get file hash for "hash" field:
 
 ## References
 
-[App Manifests Wiki](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
+[App Manifests](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
+
+[App Manifest Autoupdate](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifest-Autoupdate)
 
 [Buckets Wiki](https://github.com/ScoopInstaller/Scoop/wiki/Buckets)
 
