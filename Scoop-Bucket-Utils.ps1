@@ -51,7 +51,7 @@ foreach ($UtilityName in $Utility) {
   switch ($UtilityName) {
     'CheckHashes' {
       # "-Update": update mismatched hashes.
-      . "$env:SCOOP_HOME/bin/checkhashes.ps1" @UtilityNameArguments
+      . "$env:SCOOP_HOME/bin/checkhashes.ps1" -Update @UtilityNameArguments
     }
     'CheckUrls' {
       . "$env:SCOOP_HOME/bin/checkurls.ps1" @UtilityNameArguments

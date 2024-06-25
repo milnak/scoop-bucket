@@ -68,6 +68,8 @@ See ~/scoop/apps/scoop/current/lib/autoupdate.ps1 - $versionVariables.
 
 Version is 4.1.0, but download path is "/4.1.0/JJazzLab-4.1.0a-win64-setup.exe".  Use api.github to get browser_download_url with a regex to match version ("4.1.0") and build ("4.1.0a").
 
+Hash will search for hash pattern, e.g. "md5sum: 7b22dfef0c319daca8c1202f12592f24" on URL. See [Using Built-in RegEx in autoupdate.hash](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifest-Autoupdate).
+
 ### knobkraftorm.json
 
 innounp.exe -v ./knobkraft_orm_setup_2.3.0.exe
