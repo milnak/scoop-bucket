@@ -15,7 +15,6 @@
     ],
     "pre_install": [
         "@'",
-
         "# Folder where PortableDevTools were installed.",
         "param([string]$InstallPath='c:\\BuildTools')",
         "",
@@ -23,12 +22,12 @@
         "",
         "$env:WindowsSDKVersion = (Get-ChildItem -Directory (Join-Path $env:WindowsSDKDir 'bin') -ErrorAction SilentlyContinue | Sort-Object -Descending LastWriteTime | Select-Object -First 1).Name",
         "if (!$env:WindowsSDKVersion ) {",
-        "\tthrow 'WindowsSDKVersion cannot be determined.'",
+        "	throw 'WindowsSDKVersion cannot be determined.'",
         "}",
         "",
         "$VCToolsVersion = (Get-ChildItem -Directory (Join-Path $InstallPath '\\VC\\Tools\\MSVC' | Sort-Object -Descending LastWriteTime | Select-Object -First 1) -ErrorAction SilentlyContinue).Name",
         "if (!$VCToolsVersion) {",
-        "\tthrow 'VCToolsVersion cannot be determined.'",
+        "	throw 'VCToolsVersion cannot be determined.'",
         "}",
         "",
         "$env:VCToolsInstallDir = Join-Path $InstallPath '\\VC\\Tools\\MSVC' $VCToolsVersion",
@@ -47,7 +46,6 @@
         "$env:PATH = \"$env:MSVC_BIN;$env:SDK_BIN;$env:PATH\"",
         "$env:INCLUDE = \"$env:VCToolsInstallDir\\include;$env:WindowsSDKDir\\Include\\$env:WindowsSDKVersion\\ucrt;$env:WindowsSDKDir\\Include\\$env:WindowsSDKVersion\\shared;$env:WindowsSDKDir\\Include\\$env:WindowsSDKVersion\\um;$env:WindowsSDKDir\\Include\\$env:WindowsSDKVersion\\winrt;$env:WindowsSDKDir\\Include\\$env:WindowsSDKVersion\\cppwinrt\"",
         "$env:LIB = \"$env:VCToolsInstallDir\\lib\\$env:VSCMD_ARG_TGT_ARCH;$env:WindowsSDKDir\\Lib\\$env:WindowsSDKVersion\\ucrt\\$env:VSCMD_ARG_TGT_ARCH;$env:WindowsSDKDir\\Lib\\$env:WindowsSDKVersion\\um\\$env:VSCMD_ARG_TGT_ARCH\"",
-
         "'@ | Out-File (Join-Path $dir 'pbtdevenv.ps1') -Encoding ascii"
     ],
     "post_install": "portablebuildtools.exe cli accept_license msvc='14.40.17.10' sdk='26100' target='x64' host='x64' install_path='C:\\BuildTools'",
