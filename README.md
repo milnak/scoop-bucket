@@ -80,6 +80,8 @@ midioxse.exe is a self-extracting zip containing a MSI file.
 
 Expand-MsiArchive - see [this](https://github.com/ScoopInstaller/Scoop/blob/4a31bd330244f7f89f16208cdddda3f9edac2d65/lib/decompress.ps1#L127).
 
+MIDI-OX showed invalid install without a personal license added, so if no license is set, registry keys will be set to personal license by default.
+
 ### portable-build-tools.json
 
 I add a pbtdevenv.ps1 -- see [Create PowerShell environment script as well](https://github.com/Data-Oriented-House/PortableBuildTools/issues/6).

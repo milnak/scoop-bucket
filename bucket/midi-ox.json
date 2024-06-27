@@ -8,7 +8,14 @@
     "extract_to": "extracted",
     "pre_install": [
         "Expand-MsiArchive -Path \"$dir\\extracted\\MOXSETUP.MSI\" -DestinationPath \"$dir\\extracted\\MSI\"",
-        "Move-Item \"$dir\\extracted\\MSI\\*\" \"$dir\" -Force"
+        "Move-Item \"$dir\\extracted\\MSI\\*\" \"$dir\" -Force",
+        "$p = 'HKCU:\\Software\\Classes\\VirtualStore\\MACHINE\\SOFTWARE\\WOW6432Node\\MIDIOX Computing\\MIDI-OX'",
+        "if (-not (Test-Path -LiteralPath \"HKCU:\\Software\\Classes\\VirtualStore\\MACHINE\\SOFTWARE\\WOW6432Node\\MIDIOX Computing\\MIDI-OX\")) {",
+        "  New-Item $p -Force | Out-Null",
+        "  New-ItemProperty -LiteralPath $p -Name 'License' -Value 1 -PropertyType DWord | Out-Null",
+        "  New-ItemProperty -LiteralPath $p -Name 'UserName' -Value 'scoop' -PropertyType String | Out-Null",
+        "  New-ItemProperty -LiteralPath $p -Name 'Organization' -Value 'scoop' -PropertyType String | Out-Null",
+        "}"
     ],
     "post_install": "Remove-Item \"$dir\\extracted\" -Force -Recurse",
     "shortcuts": [
