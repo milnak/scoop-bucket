@@ -86,7 +86,11 @@ MIDI-OX showed invalid install without a personal license added, so if no licens
 
 I add a pbtdevenv.ps1 -- see [Create PowerShell environment script as well](https://github.com/Data-Oriented-House/PortableBuildTools/issues/6).
 
-I converted the PowerShell script to JSON strings using "Get-Content 'pbtdevenv.ps1' | ConvertTo-Json".
+I converted the PowerShell script to JSON strings using:
+
+```PowerShell
+(Get-Content 'pbtdevenv.ps1').Replace("`t", '  ') | ConvertTo-Json
+```
 
 Need to create script as part of pre_install, not post_install as "bin" references it before post_install occurs.
 
