@@ -1,22 +1,21 @@
 {
-    "version": "2.2",
+    "version": "2.3",
     "description": "Portable, simple and fast installer for Visual Studio Build Tools.",
     "homepage": "https://github.com/Data-Oriented-House/PortableBuildTools",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Data-Oriented-House/PortableBuildTools/releases/download/v2.2/PortableBuildTools.exe",
-            "hash": "6896edddc0dc9ff1fe98d4f41b7771015af1f6477a2a792b7fb83d4aab5a8611"
+            "url": "https://github.com/Data-Oriented-House/PortableBuildTools/releases/download/v2.3/PortableBuildTools.exe",
+            "hash": "f251b5793c9a2fa455e26680888874127b0e269182862273382930ca3a25a24f"
         }
     },
-    "bin": [
-        "PortableBuildTools.exe",
-        "pbtdevenv.ps1"
-    ],
-    "pre_install": [
+    "post_install": [
+        "portablebuildtools.exe accept_license target=x64 host=x64 env=user path='C:\\BuildTools'",
+        "if (!$?) { Write-Warning 'Running PortableBuildTools failed. Installation incomplete.' }",
+        "",
         "@'",
         "# Folder where PortableDevTools were installed.",
-        "param([string]$InstallPath = 'c:\\BuildTools')",
+        "param([string]$InstallPath = $PSScriptRoot)",
         "",
         "$env:BUILD_TOOLS_ROOT = $InstallPath",
         "",
@@ -32,6 +31,7 @@
         "$env:VSCMD_ARG_HOST_ARCH = 'x64'",
         "",
         "'Portable Build Tools environment started.'",
+        "'* BUILD_TOOLS_ROOT   : {0}' -f $env:BUILD_TOOLS_ROOT",
         "'* WindowsSDKDir      : {0}' -f $env:WindowsSDKDir",
         "'* WindowsSDKVersion  : {0}' -f $env:WindowsSDKVersion",
         "'* VCToolsInstallDir  : {0}' -f $env:VCToolsInstallDir",
@@ -42,13 +42,9 @@
         "$env:LIB = \"$env:VCToolsInstallDir\\lib\\$env:VSCMD_ARG_TGT_ARCH;$env:WindowsSDKDir\\Lib\\$env:WindowsSDKVersion\\ucrt\\$env:VSCMD_ARG_TGT_ARCH;$env:WindowsSDKDir\\Lib\\$env:WindowsSDKVersion\\um\\$env:VSCMD_ARG_TGT_ARCH\"",
         "$env:BUILD_TOOLS_BIN = \"$env:VCToolsInstallDir\\bin\\Hostx64\\$env:VSCMD_ARG_TGT_ARCH;$env:WindowsSDKDir\\bin\\$env:WindowsSDKVersion\\$env:VSCMD_ARG_TGT_ARCH;$env:WindowsSDKDir\\bin\\$env:WindowsSDKVersion\\$env:VSCMD_ARG_TGT_ARCH\\ucrt\"",
         "$env:PATH = \"$env:BUILD_TOOLS_BIN;$env:PATH\"",
-        "'@ | Out-File (Join-Path $dir 'pbtdevenv.ps1') -Encoding ascii"
+        "'@ | Out-File (Join-Path 'c:\\BuildTools' 'devcmd.ps1') -Encoding ascii"
     ],
-    "post_install": [
-        "portablebuildtools.exe accept_license target=x64 host=x64 env=user path='C:\\BuildTools'",
-        "if (!$?) { Write-Warning 'Running PortableBuildTools failed. Installation incomplete.' }"
-    ],
-    "notes": "To initialize build environment, run pbtdevenv.ps1",
+    "notes": "To initialize build environment, run C:\\BuildTools\\devcmd.ps1",
     "checkver": "github",
     "autoupdate": {
         "architecture": {
