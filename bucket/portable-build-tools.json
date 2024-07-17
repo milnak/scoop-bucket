@@ -1,12 +1,12 @@
 {
-    "version": "2.3",
+    "version": "2.4",
     "description": "Portable, simple and fast installer for Visual Studio Build Tools.",
     "homepage": "https://github.com/Data-Oriented-House/PortableBuildTools",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Data-Oriented-House/PortableBuildTools/releases/download/v2.3/PortableBuildTools.exe",
-            "hash": "f251b5793c9a2fa455e26680888874127b0e269182862273382930ca3a25a24f"
+            "url": "https://github.com/Data-Oriented-House/PortableBuildTools/releases/download/v2.4/PortableBuildTools.exe",
+            "hash": "e8008f6c8910354010f29ddd0a7473eb48dfbc228654fb1903bd3096b6288a1a"
         }
     },
     "post_install": [

@@ -132,6 +132,15 @@ To get file hash for "hash" field:
 (Get-FileHash -Algorithm SHA256 '.\xscsetup-9.40.0.exe').Hash
 ```
 
+## Determining installer type
+
+Try:
+
+* 7z l (filename)
+* dark (filename)
+* lessmsi o (filename)
+* unzip (filename)
+
 ## References
 
 [App Manifests](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
