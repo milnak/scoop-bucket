@@ -136,10 +136,11 @@ To get file hash for "hash" field:
 
 Try:
 
-* 7z l (filename)
-* dark (filename)
-* lessmsi o (filename)
-* unzip (filename)
+* trid filename - "scoop install main/trid"
+* 7z l filename - "scoop install main/7zip"
+* dark filename - "scoop install main/dark"
+* lessmsi o filename - "scoop install main/lessmsi"
+* unzip filename - "scoop install main/unzip"
 
 ## References
 
