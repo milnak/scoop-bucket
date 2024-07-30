@@ -72,7 +72,7 @@ Hash will search for hash pattern, e.g. "md5sum: 7b22dfef0c319daca8c1202f12592f2
 
 ### knobkraftorm.json
 
-innounp.exe -v ./knobkraft_orm_setup_2.3.0.exe
+`"checkver": "github",` should suffice, but a 2.3.2 only for MacOS was released which caused CheckVer to fail.
 
 ### midi-ox.json
 
