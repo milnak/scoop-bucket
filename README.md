@@ -138,6 +138,7 @@ Try:
 
 * trid filename - "scoop install main/trid"
 * 7z l filename - "scoop install main/7zip"
+  * If you see "$PLUGINSDIR", it might be NSIS (NullSoft installer)
 * dark filename - "scoop install main/dark"
 * lessmsi o filename - "scoop install main/lessmsi"
 * unzip filename - "scoop install main/unzip"
