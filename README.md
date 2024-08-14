@@ -84,19 +84,13 @@ MIDI-OX showed invalid install without a personal license added, so if no licens
 
 ### portable-build-tools.json
 
-I add a pbtdevenv.ps1 -- see [Create PowerShell environment script as well](https://github.com/Data-Oriented-House/PortableBuildTools/issues/6).
+On a clean (Windows Sandbox) VM, PortableBuildTools.exe wasn't located.  In post_install, I changed "PortableBuildTools.exe" to "& (Join-Path $dir 'PortableBuildTools.exe')" to fix this issue.
 
-I converted the PowerShell script to JSON strings using:
+My devenv.ps1 script is now integrated into the installer, so I removed my post_install that would create one.
 
-```PowerShell
-(Get-Content 'pbtdevenv.ps1').Replace("`t", '  ') | ConvertTo-Json
-```
+Now removing c:\BuildTools as part of uninstall.  Would be nice to install under scoop, but there's a [bug](https://github.com/Data-Oriented-House/PortableBuildTools/issues/22) on that.
 
-Need to create script as part of pre_install, not post_install as "bin" references it before post_install occurs.
-
-If msvc or SDK version changes, modify `msvc=` `sdk=` `$env:WindowsSDKVersion` and `$env:VCToolsInstallDir`.
-
-Not currently removing c:\BuildTools as part of uninstall.
+I also added a shortcut to the devenv.ps1.  Had to do a "pre_install" hack as "shortcuts" will only add a shortcut to an item in the install folder it seems.
 
 ### synthtribe.json
 
@@ -154,4 +148,3 @@ Try:
 [Main Bucket](https://github.com/ScoopInstaller/Main/tree/master/bucket)
 
 [Extras Bucket](https://github.com/ScoopInstaller/Extras/tree/master/bucket)
-
