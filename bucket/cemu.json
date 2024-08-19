@@ -13,7 +13,7 @@
     ],
     "notes": [
         "Download: TI-84 Plus CE ROM 5.3.0.0037 (MD5:CCB90F4A83D4833098C0AA9CF38BA1E0) from https://archive.org/details/TI84CE",
-        "Then: Copy-Item 'TI-84 CE.rom' ~/scoop/apps/cemu/current",
+        "Then: Copy-Item 'TI-84 CE.rom' $env:LocalAppData\\cemu-dev\\CEmu",
         "TI-84 Plus Guidebook: https://education.ti.com/html/eguides/graphing/84Plus/EN/TI-84-Plus-guidebook-en.html"
     ],
     "checkver": {

@@ -42,6 +42,10 @@ windbg 1.2402.24001.0 milnak
 
 ## Manifest Notes
 
+### cemu.json
+
+I tried creating a `cemu_config.ini` and adding  `"persist": "cemu_config.ini"`, to force portable mode, but couldn't get it to work.
+
 ### chordpro.json
 
 checkver.github uses regex '/releases/tag/(?:v|V)?([\\d.]+)', but ChordPro uses R6.050 !
