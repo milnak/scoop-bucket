@@ -44,7 +44,9 @@ windbg 1.2402.24001.0 milnak
 
 ### cemu.json
 
-I tried creating a `cemu_config.ini` and adding  `"persist": "cemu_config.ini"`, to force portable mode, but couldn't get it to work.
+I tried creating a `cemu_config.ini` and adding  `"persist": "cemu_config.ini"`, to force portable mode, but couldn't get it to work, as I think that cemu is deleting the .ini file which loses the SymbolicLink.  I've created a hack to workaround this.
+
+cemu places all files in same location as cemu_config.ini, so by passing persist_dir to "--settings", all of the other files (e.g. cemu_image.ce) will be placed in persist folder as well.
 
 ### chordpro.json
 
