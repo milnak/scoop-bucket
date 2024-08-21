@@ -94,9 +94,9 @@ On a clean (Windows Sandbox) VM, PortableBuildTools.exe wasn't located.  In post
 
 My devenv.ps1 script is now integrated into the installer, so I removed my post_install that would create one.
 
-Now removing c:\BuildTools as part of uninstall.  Would be nice to install under scoop, but there's a [bug](https://github.com/Data-Oriented-House/PortableBuildTools/issues/22) on that.
-
 I also added a shortcut to the devenv.ps1.  Had to do a "pre_install" hack as "shortcuts" will only add a shortcut to an item in the install folder it seems.
+
+PortableBuildTools.exe fails if install path includes a SymbolicLink, which scoop uses.  To work around that, I reference `$original_dir` instead of `$dir` during install.
 
 ### synthtribe.json
 

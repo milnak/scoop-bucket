@@ -7,19 +7,20 @@
     "hash": "c6b7a4a2e112538eb72f8c2ad101928fc6dde53ee7ec2798edc7c0cfbccf5dd3",
     "pre_install": "New-Item -ItemType SymbolicLink -Path \"$dir\\pwsh.exe\" -Target \"$env:ProgramFiles\\PowerShell\\7\\pwsh.exe\" | Out-Null",
     "post_install": [
-        "& (Join-Path $dir 'PortableBuildTools.exe')  accept_license target=x64 host=x64 env=user path='C:\\BuildTools'",
+        "$install_dir = (Join-Path $original_dir 'bin')",
+        "Write-Host -ForegroundColor DarkYellow \"`nInstalling to $install_dir - please be patient.\"",
+        "& (Join-Path $dir 'PortableBuildTools.exe')  accept_license target=x64 host=x64 env=user path=\"$install_dir\"",
         "if (!$?) { throw 'Running PortableBuildTools failed. Installation incomplete.' }"
     ],
-    "post_uninstall": "if (Test-Path -LiteralPath 'C:\\BuildTools' -PathType Container) { Remove-Item -LiteralPath 'c:\\BuildTools' -Force -Recurse }",
     "shortcuts": [
         [
             "pwsh.exe",
             "Portable Build Tools Developer Environment",
-            "/NoExit C:\\BuildTools\\devcmd.ps1",
+            "/NoExit $dir\\bin\\devcmd.ps1",
             "PortableBuildTools.exe"
         ]
     ],
-    "notes": "To initialize build environment use 'Portable Build Tools Developer Environment' shortcut or run 'C:\\BuildTools\\devcmd.ps1'",
+    "notes": "To initialize build environment use 'Portable Build Tools Developer Environment' shortcut or run '$dir\\bin\\devcmd.ps1'",
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/Data-Oriented-House/PortableBuildTools/releases/download/v$version/PortableBuildTools.exe"
