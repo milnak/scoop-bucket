@@ -1,10 +1,10 @@
 {
-    "version": "2.4",
+    "version": "2.5",
     "description": "Portable, simple and fast installer for Visual Studio Build Tools.",
     "homepage": "https://github.com/Data-Oriented-House/PortableBuildTools",
     "license": "Freeware",
-    "url": "https://github.com/Data-Oriented-House/PortableBuildTools/releases/download/v2.4/PortableBuildTools.exe",
-    "hash": "e8008f6c8910354010f29ddd0a7473eb48dfbc228654fb1903bd3096b6288a1a",
+    "url": "https://github.com/Data-Oriented-House/PortableBuildTools/releases/download/v2.5/PortableBuildTools.exe",
+    "hash": "c6b7a4a2e112538eb72f8c2ad101928fc6dde53ee7ec2798edc7c0cfbccf5dd3",
     "pre_install": "New-Item -ItemType SymbolicLink -Path \"$dir\\pwsh.exe\" -Target \"$env:ProgramFiles\\PowerShell\\7\\pwsh.exe\" | Out-Null",
     "post_install": [
         "& (Join-Path $dir 'PortableBuildTools.exe')  accept_license target=x64 host=x64 env=user path='C:\\BuildTools'",
