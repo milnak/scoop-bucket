@@ -42,6 +42,12 @@ windbg 1.2402.24001.0 milnak
 
 ## Manifest Notes
 
+After determining a regular expression at [regex101](https://regex101.com/), convert it to a JSON string using e.g.:
+
+```PowerShell
+'<a href="\/documents\/2393\/GuitarLab_Win_v([\d\.]+)_E\.zip">' | ConvertTo-Json
+```
+
 ### cemu.json
 
 I tried creating a `cemu_config.ini` and adding  `"persist": "cemu_config.ini"`, to force portable mode, but couldn't get it to work, as I think that cemu is deleting the .ini file which loses the SymbolicLink.  I've created a hack to workaround this.
