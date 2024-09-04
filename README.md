@@ -108,6 +108,10 @@ PortableBuildTools.exe fails if install path includes a SymbolicLink, which scoo
 
 Found this path using dev tools while loading [this](https://www.behringer.com/product.html?modelCode=0722-ABR).
 
+### umi-ocr.json
+
+Persists settings, avoiding [known issue](https://github.com/ScoopInstaller/Extras/issues/13707)
+
 ### usbdeview.json
 
 This is a fixed version of the manifest that's in nirsoft bucket. scoop is case-sensitive on filenames!
