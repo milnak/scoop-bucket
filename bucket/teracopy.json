@@ -22,9 +22,7 @@
             "TeraCopy"
         ]
     ],
-    "persist": [
-        "teracopy\\options.ini"
-    ],
+    "persist": "teracopy\\options.ini",
     "autoupdate": {
         "url": "https://www.codesector.com/files/teracopy.exe"
     }

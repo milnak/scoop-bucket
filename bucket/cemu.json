@@ -1,14 +1,14 @@
 {
     "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
     "autoupdate": {
-        "url": "https://github.com/CE-Programming/CEmu/releases/download/$version/windows_CEmu.zip"
+        "url": "https://github.com/CE-Programming/CEmu/releases/download/v$version/CEmu-v$version_win64_Qt6.exe"
     },
     "checkver": {
         "github": "https://github.com/CE-Programming/CEmu",
         "regex": "tag/v([\\d.]+)"
     },
     "description": "TI-84 Plus CE / TI-83 Premium CE emulator, focused on developer features.",
-    "hash": "2b32825ac1661b3ad9a46e56d96a5f8afc5a8389d34db9324e1e454ef40d6eb0",
+    "hash": "5260f4460c4f0e08d2d8197ecd206d5156bb8f1fa62941eda35ef1034326cfc3",
     "homepage": "https://ce-programming.github.io/CEmu/",
     "license": "GPL-3.0",
     "notes": [
@@ -18,7 +18,8 @@
         "",
         "TI-84 Plus Guidebook: https://education.ti.com/html/eguides/graphing/84Plus/EN/TI-84-Plus-guidebook-en.html"
     ],
-    "persist":  "config",
+    "persist": "config",
+    "pre_install": "Rename-Item -Path \"$dir\\CEmu-v*_win64_Qt6.exe\" -NewName 'CEmu.exe'",
     "shortcuts": [
         [
             "CEmu.exe",
@@ -26,6 +27,6 @@
             "--settings \"$persist_dir\\config\\cemu_config.ini\""
         ]
     ],
-    "url": "https://github.com/CE-Programming/CEmu/releases/download/v1.3/windows_CEmu.zip",
-    "version": "1.3"
+    "url": "https://github.com/CE-Programming/CEmu/releases/download/v2.0/CEmu-v2.0_win64_Qt6.exe",
+    "version": "2.0"
 }
