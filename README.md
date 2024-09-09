@@ -104,6 +104,10 @@ I also added a shortcut to the devenv.ps1.  Had to do a "pre_install" hack as "s
 
 PortableBuildTools.exe fails if install path includes a SymbolicLink, which scoop uses.  To work around that, I reference `$original_dir` instead of `$dir` during install.
 
+### sweethome3d.json
+
+Contains [persistence bug](https://github.com/ScoopInstaller/Extras/issues/13548) fix.
+
 ### synthtribe.json
 
 Found this path using dev tools while loading [this](https://www.behringer.com/product.html?modelCode=0722-ABR).
