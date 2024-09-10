@@ -1,0 +1,33 @@
+{
+    "version": "24.07r5332",
+    "description": "Notepad4 (Notepad2⨯2, Notepad2++) is a light-weight Scintilla based text editor for Windows with syntax highlighting, code folding, auto-completion and API list for many programming languages and documents.",
+    "homepage": "https://github.com/zufuliu/notepad4",
+    "license": "BSD-3-Clause",
+    "url": "https://github.com/zufuliu/notepad4/releases/download/v24.07r5332/Notepad4_en_x64_v24.07r5332.zip",
+    "hash": "024daf43bfd24b0c61515d543a2656e653cbf27e4f0ad5995bc0a4f9dff7b1c5",
+    "bin": [
+        "notepad4.exe",
+        "matepath.exe"
+    ],
+    "shortcuts": [
+        [
+            "Notepad4.exe",
+            "Notepad4"
+        ],
+        [
+            "matepath.exe",
+            "matepath"
+        ]
+    ],
+    "persist": [
+        "Notepad4.ini",
+        "matepath.ini"
+    ],
+    "checkver": {
+        "github": "https://github.com/zufuliu/notepad4",
+        "regex": "v(\\d+\\.\\d+r\\d+)"
+    },
+    "autoupdate": {
+        "url": "https://github.com/zufuliu/notepad4/releases/download/v24.07r5332/Notepad4_en_x64_v$version.zip"
+    }
+}

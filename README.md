@@ -94,6 +94,10 @@ Expand-MsiArchive - see [this](https://github.com/ScoopInstaller/Scoop/blob/4a31
 
 MIDI-OX showed invalid install without a personal license added, so if no license is set, registry keys will be set to personal license by default.
 
+### notepad4.json
+
+Scoop's notepad2-zufuliu is out of date. This is up to date.
+
 ### portable-build-tools.json
 
 On a clean (Windows Sandbox) VM, PortableBuildTools.exe wasn't located.  In post_install, I changed "PortableBuildTools.exe" to "& (Join-Path $dir 'PortableBuildTools.exe')" to fix this issue.
