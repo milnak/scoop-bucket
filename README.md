@@ -96,7 +96,7 @@ MIDI-OX showed invalid install without a personal license added, so if no licens
 
 ### notepad4.json
 
-Scoop's notepad2-zufuliu is out of date. This is up to date.
+Scoop's [notepad2-zufuliu](https://github.com/ScoopInstaller/Extras/blob/fb21864016f4955413bb8d476bad46ca80001786/bucket/notepad2-zufuliu.json) is out of date. This is up to date.
 
 ### portable-build-tools.json
 

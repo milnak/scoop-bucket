@@ -28,6 +28,6 @@
         "regex": "v(\\d+\\.\\d+r\\d+)"
     },
     "autoupdate": {
-        "url": "https://github.com/zufuliu/notepad4/releases/download/v24.07r5332/Notepad4_en_x64_v$version.zip"
+        "url": "https://github.com/zufuliu/notepad4/releases/download/v$version/Notepad4_en_x64_v$version.zip"
     }
 }
