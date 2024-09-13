@@ -1,5 +1,5 @@
 {
-    "version": "v2.2_preview_2024-09-11",
+    "version": "2.2_preview_2024-09-11",
     "description": "Advanced freeware audio player for the Windows platform.",
     "homepage": "https://www.foobar2000.org/",
     "license": {
@@ -22,10 +22,10 @@
     "pre_install": "New-Item \"$dir\\portable_mode_enabled\" -Force | Out-Null",
     "checkver": {
         "url": "https://www.foobar2000.org/download",
-        "regex": "Download foobar2000 (v\\d+\\.\\d+) (preview) (\\d{4}-\\d{2}-\\d{2})",
+        "regex": "Download foobar2000 v(\\d+\\.\\d+) (preview) (\\d{4}-\\d{2}-\\d{2})",
         "replace": "${1}_${2}_${3}"
     },
     "autoupdate": {
-        "url": "https://www.foobar2000.org/files/foobar2000-x64_$version.exe#/dl.7z"
+        "url": "https://www.foobar2000.org/files/foobar2000-x64_v$version.exe#/dl.7z"
     }
 }
