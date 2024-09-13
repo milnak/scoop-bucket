@@ -6,5 +6,9 @@
                 "bucket/**/*.json"
             ]
         }
+    ],
+    "cSpell.words": [
+        "autoupdate",
+        "checkver"
     ]
 }
