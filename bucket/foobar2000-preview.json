@@ -1,0 +1,31 @@
+{
+    "version": "v2.2_preview_2024-09-11",
+    "description": "Advanced freeware audio player for the Windows platform.",
+    "homepage": "https://www.foobar2000.org/",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://www.foobar2000.org/license"
+    },
+    "suggest": {
+        "Encoders": "extras/foobar2000-encoders"
+    },
+    "url": "https://www.foobar2000.org/files/foobar2000-x64_v2.2_preview_2024-09-11.exe#/dl.7z",
+    "hash": "1531d066dca4b850968fa288f28abf44353bfa11b947ff02ae14681f370b46f4",
+    "bin": "foobar2000.exe",
+    "shortcuts": [
+        [
+            "foobar2000.exe",
+            "Foobar2000"
+        ]
+    ],
+    "persist": "profile",
+    "pre_install": "New-Item \"$dir\\portable_mode_enabled\" -Force | Out-Null",
+    "checkver": {
+        "url": "https://www.foobar2000.org/download",
+        "regex": "Download foobar2000 (v\\d+\\.\\d+) (preview) (\\d{4}-\\d{2}-\\d{2})",
+        "replace": "${1}_${2}_${3}"
+    },
+    "autoupdate": {
+        "url": "https://www.foobar2000.org/files/foobar2000-x64_$version.exe#/dl.7z"
+    }
+}

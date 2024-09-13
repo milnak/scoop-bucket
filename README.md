@@ -68,6 +68,10 @@ This is a nullsoft installer, which is 7zip-wrapped.
 
 Ctrlr-5.3.201.exe is a nullsoft (7-zip) installer.
 
+### foobar2000-preview
+
+Latest foobar2000 version.
+
 ### grief.json
 
 checkver.github uses regex '/releases/tag/(?:v|V)?([\\d.]+)', but grief uses '3.2.3-build-26'.
