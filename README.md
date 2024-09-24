@@ -134,6 +134,10 @@ This is a fixed version of the manifest that's in nirsoft bucket. scoop is case-
 
 Also, scoop persist requires a file to exist in $dir at install time, or it will be assumed that the object is a folder, so New-Item is used to create an empty file.
 
+### wabbitemu.json
+
+See [rom_path getting corrupted in wabbitemu.ini (Windows)](https://github.com/sputt/wabbitemu/issues/36) -- a file "currentwabbitemu.sav" will be placed ion ~/scoop/apps/wabbitemu because of this bug.
+
 ### windbg.json
 
 Derived from 'winget show Microsoft.windbg'.
