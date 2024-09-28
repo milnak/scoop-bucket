@@ -90,6 +90,8 @@ Hash will search for hash pattern, e.g. "md5sum: 7b22dfef0c319daca8c1202f12592f2
 
 `"checkver": "github",` should suffice, but a 2.3.2 only for MacOS was released which caused CheckVer to fail.
 
+Add requirement for [versions/innounp-unicode](https://github.com/ScoopInstaller/Scoop/issues/6157)
+
 ### midi-ox.json
 
 midioxse.exe is a self-extracting zip containing a MSI file.
