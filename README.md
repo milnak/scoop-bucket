@@ -114,6 +114,10 @@ I also added a shortcut to the devenv.ps1.  Had to do a "pre_install" hack as "s
 
 PortableBuildTools.exe fails if install path includes a SymbolicLink, which scoop uses.  To work around that, I reference `$original_dir` instead of `$dir` during install.
 
+### romcenter.json
+
+Didn't add "bin": [ "datutil.exe", "rc.exe" ] as I don't think these tools are commonly used.
+
 ### superputty.json
 
 Similar to the one in extras, but this one stores SuperPuTTY.settings in a persist folder rather than under $env:USERPROFILE
