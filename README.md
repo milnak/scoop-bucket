@@ -104,6 +104,11 @@ MIDI-OX showed invalid install without a personal license added, so if no licens
 
 Scoop's [notepad2-zufuliu](https://github.com/ScoopInstaller/Extras/blob/fb21864016f4955413bb8d476bad46ca80001786/bucket/notepad2-zufuliu.json) is out of date. This is up to date.
 
+### plus42.json
+
+I'm creating an empty "state.bin" file but that causes "State File Corrupt" to be
+displayed when starting Plus42. This goes away on any keypress.
+
 ### portable-build-tools.json
 
 On a clean (Windows Sandbox) VM, PortableBuildTools.exe wasn't located.  In post_install, I changed "PortableBuildTools.exe" to "& (Join-Path $dir 'PortableBuildTools.exe')" to fix this issue.
