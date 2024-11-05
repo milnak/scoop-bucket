@@ -1,0 +1,31 @@
+{
+    "version": "3.1.0",
+    "description": "Frontend for browsing and launching games from your multi-platform collection.",
+    "homepage": "https://www.es-de.org/",
+    "license": "Freeware",
+    "url": "https://gitlab.com/es-de/emulationstation-de/-/package_files/147580913/download#ES-DE-x64_Portable.zip",
+    "extract_dir": "ES-DE",
+    "hash": "38e0b1f46affb7fb652ffd37c0eee6b3eed8eab08d3b590c3d30e3139e7ff113",
+    "persist": [
+        "ES-DE",
+        "ROMs"
+    ],
+    "shortcuts": [
+        [
+            "ES-DE.exe",
+            "ES-DE Frontend"
+        ]
+    ],
+    "checkver": {
+        "url": "https://gitlab.com/api/v4/projects/18817634/releases",
+        "jsonpath": "$.[0].tag_name",
+        "regex": "(\\d+\\.\\d+\\.\\d+)"
+    },
+    "autoupdate": {
+        "url": "https://gitlab.com/es-de/emulationstation-de/-/package_files/147580913/download#ES-DE-x64_Portable.zip"
+    },
+    "notes": [
+        "ROMs root folder: $persist_dir\\ROMs",
+        "Media root folder: $persist_dir\\downloaded_media"
+    ]
+}
