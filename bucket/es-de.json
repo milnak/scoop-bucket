@@ -27,5 +27,8 @@
     "notes": [
         "ROMs root folder: $persist_dir\\ROMs",
         "Media root folder: $persist_dir\\downloaded_media"
-    ]
+    ],
+    "suggest": {
+        "Emulator": "extras/retroarch"
+    }
 }
