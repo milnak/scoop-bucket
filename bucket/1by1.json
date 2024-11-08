@@ -1,0 +1,39 @@
+{
+    "homepage": "http://mpesch3.de/1by1.html",
+    "description": "Audio directory player",
+    "version": "2.10",
+    "license": "freeware",
+    "##": "Additional BASS input plugins available at https://www.un4seen.com/",
+    "url": [
+        "https://sea-02.dlo4d.com/files/1by1/1by1_210.exe#1by1.7z",
+        "https://mpesch3.de/extra/1by1webradio.zip",
+        "https://mpesch3.de/extra/1by1buttons.zip",
+        "https://mpesch3.de/extra/1by1_Toolbars_2024_24to128px_Tr.zip",
+        "https://www.un4seen.com/files/bass24.zip",
+        "https://www.un4seen.com/files/bassflac24.zip"
+    ],
+    "hash": [
+        "db2a1635b18d7fed5610c01b621ac5394d974edc019e772cc32eeae8c295aa4a",
+        "78c2620d835928cde17752c94b240cdae006c9300b5e3ee3939342a69aab18bc",
+        "f60548ee781f79b7c4c17350e2033605c056b1f032300ff0914ced53653248b1",
+        "8a2c86574d46503ccfcf42c2978a3ef887fed7fa9b49778574c7a38153a1b2ff",
+        "f9e74a672eb1ecee8e41dff0ec5bad24a2678181312c94b81988a718d7c29574",
+        "d30b2f06953154c4bad8ab9a6fad22ed850882e1028c090436c75f853c367c8d"
+    ],
+    "bin": "1by1.exe",
+    "persist": "1by1.ini",
+    "pre_install": "$manifest.persist | ForEach-Object { New-Item -Path (Join-Path -Path $dir -ChildPath $_) -ItemType File -ErrorAction SilentlyContinue | Out-Null }",
+    "shortcuts": [
+        [
+            "1by1.exe",
+            "1by1 Directory Player"
+        ]
+    ],
+    "checkver": "Version (\\d.\\d+) ",
+    "autoupdate": {
+        "url": "https://sea-02.dlo4d.com/files/1by1/1by1_$cleanVersion.exe#1by1.7z",
+        "hash": {
+            "mode": "fosshub"
+        }
+    }
+}
