@@ -158,6 +158,15 @@ The build tools installer adds start menu shortcuts for:
 * x86 Native Tools Command Prompt for VS 2022 (component not installed)
 * x64_x86 Cross Tools Command Prompt for VS 2022 (component not installed)
 
+You can also open the Developer PowerShell using:
+
+```PowerShell
+Import-Module (Join-Path (scoop prefix 'vs-build-tools-2022') '\vs\Common7\Tools\Microsoft.VisualStudio.DevShell.dll')
+
+# Can't use `Join-Path (scoop prefix 'vs-build-tools-2022') 'vs'` as the scoop junction causes the lookup to fail.
+Enter-VsDevShell -VsInstallPath (Resolve-Path '~\scoop\apps\vs-build-tools-2022\17.12\vs')
+```
+
 If using [vcpkg](https://learn.microsoft.com/en-us/vcpkg/get_started/overview), ensure that `CMAKE_TOOLCHAIN_FILE` is set:
 
 ```PowerShell
