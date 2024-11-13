@@ -145,6 +145,30 @@ This is a fixed version of the manifest that's in nirsoft bucket. scoop is case-
 
 Also, scoop persist requires a file to exist in $dir at install time, or it will be assumed that the object is a folder, so New-Item is used to create an empty file.
 
+### vs-build-tools-2022
+
+Based on: [Visual Studio VC Build Tools w/vcpkg, CMake and Ninja, plus Qt](https://gist.github.com/milnak/67e5b7bf036c26827a8eee2911028e37)
+
+--includeRecommended includes CMake which is required for vcpkg to work, however that CMake is an older version.  Installing main/cmake will install  a newer version.
+
+The build tools installer adds start menu shortcuts for:
+
+* Developer Command Prompt for VS 2022
+* Developer PowerShell for VS 2022
+* x86 Native Tools Command Prompt for VS 2022 (component not installed)
+* x64_x86 Cross Tools Command Prompt for VS 2022 (component not installed)
+
+If using [vcpkg](https://learn.microsoft.com/en-us/vcpkg/get_started/overview), ensure that `CMAKE_TOOLCHAIN_FILE` is set:
+
+```PowerShell
+$env:CMAKE_TOOLCHAIN_FILE="$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+```
+
+References:
+
+* [Use command-line parameters to install, update, and manage Visual Studio](https://learn.microsoft.com/en-us/visualstudio/install/use-command-line-parameters-to-install-visual-studio?view=vs-2022)
+* [Visual Studio Build Tools component directory](https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools?view=vs-2022)
+
 ### wabbitemu.json
 
 See [rom_path getting corrupted in wabbitemu.ini (Windows)](https://github.com/sputt/wabbitemu/issues/36) -- a file "currentwabbitemu.sav" will be placed ion ~/scoop/apps/wabbitemu because of this bug.
