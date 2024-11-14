@@ -80,6 +80,10 @@ Thanks, [JSONPath Online Evaluator](https://jsonpath.com/)!
 
 See ~/scoop/apps/scoop/current/lib/autoupdate.ps1 - $versionVariables.
 
+### insideclipboard.json
+
+Similar to nirsoft/insideclipboard, but this persists configuration.
+
 ### jjazzlab.json
 
 Version is 4.1.0, but download path is "/4.1.0/JJazzLab-4.1.0a-win64-setup.exe".  Use api.github to get browser_download_url with a regex to match version ("4.1.0") and build ("4.1.0a").
