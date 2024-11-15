@@ -2,6 +2,8 @@
 
 Stuff that I use that isn't in the official scoop buckets.
 
+The "archive" directory consists of manifests I've created that I feel aren't useful anymore.
+
 ## Getting Started
 
 ### Add bucket
