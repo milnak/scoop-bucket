@@ -1,0 +1,24 @@
+{
+    "version": "2.41",
+    "description": "Scans your wireless network and displays the list of all computers and devices that are currently connected to your network.",
+    "license": "freeware",
+    "homepage": "https://www.nirsoft.net/utils/wireless_network_watcher.html",
+    "url": "https://www.nirsoft.net/utils/wnetwatcher-x64.zip",
+    "hash": "521c7d7a46cf778ed0fea23fd4dda5f4cdd861dea16511583433c0c4ed9be837",
+    "pre_install": "New-Item -Path (Join-Path $dir 'WNetWatcher.cfg') -ItemType File | Out-Null",
+    "bin": "WNetWatcher.exe",
+    "shortcuts": [
+        [
+            "WNetWatcher.exe",
+            "Wireless Network Watcher"
+        ]
+    ],
+    "persist": "WNetWatcher.cfg",
+    "checkver": {
+        "url": "https://www.nirsoft.net/pad/wnetwatcher.xml",
+        "xpath": "/XML_DIZ_INFO/Program_Info/Program_Version"
+    },
+    "autoupdate": {
+        "url": "https://www.nirsoft.net/utils/wnetwatcher-x64.zip"
+    }
+}

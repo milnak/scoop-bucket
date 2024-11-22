@@ -192,6 +192,10 @@ See [rom_path getting corrupted in wabbitemu.ini (Windows)](https://github.com/s
 
 Derived from 'winget show Microsoft.windbg'.
 
+### wirelessnetworkwatcher.json
+
+Similar to nirsoft/wirelessnetworkwatcher, but this persists configuration.
+
 ## Development Notes
 
 For development purposes, this repo should be cloned into `~/scoop/buckets/milnak`.
