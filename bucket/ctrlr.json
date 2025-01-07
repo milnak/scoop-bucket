@@ -14,7 +14,7 @@
     ],
     "checkver": {
         "url": "https://api.github.com/repos/RomanKubiak/ctrlr/releases/latest",
-        "jsonpath": "$.tag_name"
+        "jsonpath": "$.assets[3].name"
     },
     "autoupdate": {
         "url": "http://ctrlr.org/nightly/Ctrlr-$version.exe#dl.7z"
