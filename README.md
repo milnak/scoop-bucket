@@ -82,9 +82,7 @@ Latest foobar2000 version.
 
 checkver.github uses regex '/releases/tag/(?:v|V)?([\\d.]+)', but grief uses '3.2.3-build-26'.
 
-Thanks, [JSONPath Online Evaluator](https://jsonpath.com/)!
-
-See ~/scoop/apps/scoop/current/lib/autoupdate.ps1 - $versionVariables.
+A better jsonpath would be `"jsonpath": "$..assets[?match(@.name,  \".*-win-x86-setup.exe\")].browser_download_url"` but [scoop doesn't seem to support JSONPath matching](https://github.com/ScoopInstaller/Scoop/issues/6266).
 
 ### insideclipboard.json
 
@@ -242,3 +240,12 @@ Try:
 [Main Bucket](https://github.com/ScoopInstaller/Main/tree/master/bucket)
 
 [Extras Bucket](https://github.com/ScoopInstaller/Extras/tree/master/bucket)
+
+JSONPath:
+
+* [JSONPath Online Evaluator](https://jsonpath.com/)
+* [RFC 9535: JSONPath:  JSONPath: Query Expressions for JSON](https://www.rfc-editor.org/rfc/rfc9535.pdf)
+
+Scoop versionVariables:
+
+* [Source Code](https://github.com/ScoopInstaller/Scoop/blob/859d1db51bcc840903d5280567846ae2f7207ca2/lib/autoupdate.ps1#L413*)
