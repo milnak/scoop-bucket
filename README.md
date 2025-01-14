@@ -74,10 +74,6 @@ Ctrlr-5.3.201.exe is a nullsoft (7-zip) installer.
 
 Retrieved project_id from [source code](https://gitlab.com/es-de/emulationstation-de/-/releases)
 
-### foobar2000-preview
-
-Latest foobar2000 version.
-
 ### grief
 
 checkver.github uses regex '/releases/tag/(?:v|V)?([\\d.]+)', but grief uses '3.2.3-build-26'.
@@ -117,16 +113,6 @@ Scoop's [notepad2-zufuliu](https://github.com/ScoopInstaller/Extras/blob/fb21864
 I'm creating an empty "state.bin" file but that causes "State File Corrupt" to be
 displayed when starting Plus42. This goes away on any keypress.
 
-### portable-build-tools
-
-On a clean (Windows Sandbox) VM, PortableBuildTools.exe wasn't located.  In post_install, I changed "PortableBuildTools.exe" to "& (Join-Path $dir 'PortableBuildTools.exe')" to fix this issue.
-
-My devenv.ps1 script is now integrated into the installer, so I removed my post_install that would create one.
-
-I also added a shortcut to the devenv.ps1.  Had to do a "pre_install" hack as "shortcuts" will only add a shortcut to an item in the install folder it seems.
-
-PortableBuildTools.exe fails if install path includes a SymbolicLink, which scoop uses.  To work around that, I reference `$original_dir` instead of `$dir` during install.
-
 ### romcenter
 
 Didn't add "bin": [ "datutil.exe", "rc.exe" ] as I don't think these tools are commonly used.
@@ -156,43 +142,6 @@ Persists settings, avoiding [known issue](https://github.com/ScoopInstaller/Extr
 This is a fixed version of the manifest that's in nirsoft bucket. scoop is case-sensitive on filenames!
 
 Also, scoop persist requires a file to exist in $dir at install time, or it will be assumed that the object is a folder, so New-Item is used to create an empty file.
-
-### vs-build-tools-2022
-
-Based on: [Visual Studio VC Build Tools w/vcpkg, CMake and Ninja, plus Qt](https://gist.github.com/milnak/67e5b7bf036c26827a8eee2911028e37)
-
---includeRecommended includes CMake which is required for vcpkg to work, however that CMake is an older version.  Installing main/cmake will install  a newer version.
-
-The build tools installer adds start menu shortcuts for:
-
-* Developer Command Prompt for VS 2022
-* Developer PowerShell for VS 2022
-* x86 Native Tools Command Prompt for VS 2022 (component not installed)
-* x64_x86 Cross Tools Command Prompt for VS 2022 (component not installed)
-
-You can also open the Developer PowerShell using:
-
-```PowerShell
-Import-Module (Join-Path (scoop prefix 'vs-build-tools-2022') '\vs\Common7\Tools\Microsoft.VisualStudio.DevShell.dll')
-
-# Can't use `Join-Path (scoop prefix 'vs-build-tools-2022') 'vs'` as the scoop junction causes the lookup to fail.
-Enter-VsDevShell -VsInstallPath (Resolve-Path '~\scoop\apps\vs-build-tools-2022\17.12\vs')
-```
-
-If using [vcpkg](https://learn.microsoft.com/en-us/vcpkg/get_started/overview), ensure that `CMAKE_TOOLCHAIN_FILE` is set:
-
-```PowerShell
-$env:CMAKE_TOOLCHAIN_FILE="$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
-```
-
-References:
-
-* [Use command-line parameters to install, update, and manage Visual Studio](https://learn.microsoft.com/en-us/visualstudio/install/use-command-line-parameters-to-install-visual-studio?view=vs-2022)
-* [Visual Studio Build Tools component directory](https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools?view=vs-2022)
-
-### wabbitemu
-
-See [rom_path getting corrupted in wabbitemu.ini (Windows)](https://github.com/sputt/wabbitemu/issues/36) -- a file "currentwabbitemu.sav" will be placed ion ~/scoop/apps/wabbitemu because of this bug.
 
 ### windbg
 
