@@ -50,23 +50,23 @@ After determining a regular expression at [regex101](https://regex101.com/), con
 '<a href="\/documents\/2393\/GuitarLab_Win_v([\d\.]+)_E\.zip">' | ConvertTo-Json
 ```
 
-### cemu.json
+### cemu
 
 I tried creating a `cemu_config.ini` and adding  `"persist": "cemu_config.ini"`, to force portable mode, but couldn't get it to work, as I think that cemu is deleting the .ini file which loses the SymbolicLink.  I've created a hack to workaround this.
 
 cemu places all files in same location as cemu_config.ini, so by passing persist_dir to "--settings", all of the other files (e.g. cemu_image.ce) will be placed in persist folder as well.
 
-### chordpro.json
+### chordpro
 
 checkver.github uses regex '/releases/tag/(?:v|V)?([\\d.]+)', but ChordPro uses R6.050 !
 
 minor is '050' but installer uses '50'
 
-### clonespy.json
+### clonespy
 
 This is a nullsoft installer, which is 7zip-wrapped.
 
-### ctrlr.json
+### ctrlr
 
 Ctrlr-5.3.201.exe is a nullsoft (7-zip) installer.
 
@@ -78,29 +78,29 @@ Retrieved project_id from [source code](https://gitlab.com/es-de/emulationstatio
 
 Latest foobar2000 version.
 
-### grief.json
+### grief
 
 checkver.github uses regex '/releases/tag/(?:v|V)?([\\d.]+)', but grief uses '3.2.3-build-26'.
 
 A better jsonpath would be `"jsonpath": "$..assets[?match(@.name,  \".*-win-x86-setup.exe\")].browser_download_url"` but [scoop doesn't seem to support JSONPath matching](https://github.com/ScoopInstaller/Scoop/issues/6266).
 
-### insideclipboard.json
+### insideclipboard
 
 Similar to nirsoft/insideclipboard, but this persists configuration.
 
-### jjazzlab.json
+### jjazzlab
 
 Version is 4.1.0, but download path is "/4.1.0/JJazzLab-4.1.0a-win64-setup.exe".  Use api.github to get browser_download_url with a regex to match version ("4.1.0") and build ("4.1.0a").
 
 Hash will search for hash pattern, e.g. "md5sum: 7b22dfef0c319daca8c1202f12592f24" on URL. See [Using Built-in RegEx in autoupdate.hash](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifest-Autoupdate).
 
-### knobkraftorm.json
+### knobkraftorm
 
 `"checkver": "github",` should suffice, but a 2.3.2 only for MacOS was released which caused CheckVer to fail.
 
 Add requirement for [versions/innounp-unicode](https://github.com/ScoopInstaller/Scoop/issues/6157)
 
-### midi-ox.json
+### midi-ox
 
 midioxse.exe is a self-extracting zip containing a MSI file.
 
@@ -108,16 +108,16 @@ Expand-MsiArchive - see [this](https://github.com/ScoopInstaller/Scoop/blob/4a31
 
 MIDI-OX showed invalid install without a personal license added, so if no license is set, registry keys will be set to personal license by default.
 
-### notepad4.json
+### notepad4
 
-Scoop's [notepad2-zufuliu](https://github.com/ScoopInstaller/Extras/blob/fb21864016f4955413bb8d476bad46ca80001786/bucket/notepad2-zufuliu.json) is out of date. This is up to date.
+Scoop's [notepad2-zufuliu](https://github.com/ScoopInstaller/Extras/blob/fb21864016f4955413bb8d476bad46ca80001786/bucket/notepad2-zufuliu) is out of date. This is up to date.
 
-### plus42.json
+### plus42
 
 I'm creating an empty "state.bin" file but that causes "State File Corrupt" to be
 displayed when starting Plus42. This goes away on any keypress.
 
-### portable-build-tools.json
+### portable-build-tools
 
 On a clean (Windows Sandbox) VM, PortableBuildTools.exe wasn't located.  In post_install, I changed "PortableBuildTools.exe" to "& (Join-Path $dir 'PortableBuildTools.exe')" to fix this issue.
 
@@ -127,27 +127,31 @@ I also added a shortcut to the devenv.ps1.  Had to do a "pre_install" hack as "s
 
 PortableBuildTools.exe fails if install path includes a SymbolicLink, which scoop uses.  To work around that, I reference `$original_dir` instead of `$dir` during install.
 
-### romcenter.json
+### romcenter
 
 Didn't add "bin": [ "datutil.exe", "rc.exe" ] as I don't think these tools are commonly used.
 
-### superputty.json
+### sourcegit
+
+Add portable mode by creating "data" folder.
+
+### superputty
 
 Similar to the one in extras, but this one stores SuperPuTTY.settings in a persist folder rather than under $env:USERPROFILE
 
-### sweethome3d.json
+### sweethome3d
 
 Contains [persistence bug](https://github.com/ScoopInstaller/Extras/issues/13548) fix.
 
-### synthtribe.json
+### synthtribe
 
 Found this path using dev tools while loading [this](https://www.behringer.com/product.html?modelCode=0722-ABR).
 
-### umi-ocr.json
+### umi-ocr
 
 Persists settings, avoiding [known issue](https://github.com/ScoopInstaller/Extras/issues/13707)
 
-### usbdeview.json
+### usbdeview
 
 This is a fixed version of the manifest that's in nirsoft bucket. scoop is case-sensitive on filenames!
 
@@ -186,15 +190,15 @@ References:
 * [Use command-line parameters to install, update, and manage Visual Studio](https://learn.microsoft.com/en-us/visualstudio/install/use-command-line-parameters-to-install-visual-studio?view=vs-2022)
 * [Visual Studio Build Tools component directory](https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools?view=vs-2022)
 
-### wabbitemu.json
+### wabbitemu
 
 See [rom_path getting corrupted in wabbitemu.ini (Windows)](https://github.com/sputt/wabbitemu/issues/36) -- a file "currentwabbitemu.sav" will be placed ion ~/scoop/apps/wabbitemu because of this bug.
 
-### windbg.json
+### windbg
 
 Derived from 'winget show Microsoft.windbg'.
 
-### wirelessnetworkwatcher.json
+### wirelessnetworkwatcher
 
 Similar to nirsoft/wirelessnetworkwatcher, but this persists configuration.
 
