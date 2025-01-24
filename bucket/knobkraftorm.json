@@ -6,7 +6,7 @@
     "url": "https://github.com/christofmuc/KnobKraft-orm/releases/download/2.5.0/knobkraft_orm_setup_2.5.0.exe",
     "hash": "11abf6d9ec8e1f540670523ee4769926794ce92a38e1d653b10764a6778cb8c3",
     "innosetup": true,
-    "depends": "versions/innounp-unicode",
+    "depends": "main/innounp",
     "shortcuts": [
         [
             "KnobKraftOrm.exe",
