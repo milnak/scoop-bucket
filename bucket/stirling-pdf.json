@@ -12,7 +12,7 @@
     ],
     "pre_install": [
         "'@ECHO Launching Stirling-PDF...' | Out-File -LiteralPath (Join-Path $dir 'stirling-pdf.cmd') -Encoding ascii",
-        "('@START \"StirlingPDF: Ctrl-Break to stop\" /D \"{0}\" java.exe -jar \"{1}\"') -f $dir, (Join-Path $dir 'Stirling-PDF.jar') | Out-File -LiteralPath (Join-Path $dir 'stirling-pdf.cmd') -Encoding ascii -Append",
+        "('@START \"StirlingPDF: Ctrl-C to stop\" /D \"{0}\" java.exe -jar \"{1}\"') -f $dir, (Join-Path $dir 'Stirling-PDF.jar') | Out-File -LiteralPath (Join-Path $dir 'stirling-pdf.cmd') -Encoding ascii -Append",
         "'TIMEOUT.EXE 5 /NOBREAK >NUL' | Out-File -LiteralPath (Join-Path $dir 'stirling-pdf.cmd') -Encoding ascii -Append",
         "'@ECHO Launching Browser...' | Out-File -LiteralPath (Join-Path $dir 'stirling-pdf.cmd') -Encoding ascii -Append",
         "'@START \"Stirling PDF\" \"http://localhost:8080\" /WAIT' | Out-File -LiteralPath (Join-Path $dir 'stirling-pdf.cmd') -Encoding ascii -Append"
