@@ -115,6 +115,10 @@ displayed when starting Plus42. This goes away on any keypress.
 
 Didn't add "bin": [ "datutil.exe", "rc.exe" ] as I don't think these tools are commonly used.
 
+### stirling-pdf
+
+Similar to the one in extras, but this one creates a launcher script which opens a browser to the UI.
+
 ### sourcegit
 
 Add portable mode by creating "data" folder.
