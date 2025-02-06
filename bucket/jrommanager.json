@@ -16,5 +16,6 @@
     "autoupdate": {
         "url": "https://github.com/optyfr/JRomManager/releases/download/$version/JRomManager-$version-win-x64.zip",
         "extract_dir": "JRomManager-$version-win-x64"
-    }
+    },
+    "notes": "Settings and datfiles are stored in ~/.jrommanager"
 }
