@@ -102,10 +102,6 @@ Expand-MsiArchive - see [this](https://github.com/ScoopInstaller/Scoop/blob/4a31
 
 MIDI-OX showed invalid install without a personal license added, so if no license is set, registry keys will be set to personal license by default.
 
-### notepad4
-
-Scoop's [notepad2-zufuliu](https://github.com/ScoopInstaller/Extras/blob/fb21864016f4955413bb8d476bad46ca80001786/bucket/notepad2-zufuliu) is out of date. This is up to date.
-
 ### plus42
 
 I'm creating an empty "state.bin" file but that causes "State File Corrupt" to be
