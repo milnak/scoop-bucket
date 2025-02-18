@@ -143,7 +143,7 @@ Derived from 'winget show Microsoft.windbg'.
 
 ### wirelessnetworkwatcher
 
-Similar to nirsoft/wirelessnetworkwatcher, but this persists configuration.
+Similar to nirsoft/wnetwatcher, but this persists configuration correctly.
 
 ## Development Notes
 
