@@ -10,6 +10,7 @@
         "Start-Process -FilePath (Join-Path $dir 'Guitar Lab Setup.exe') -ArgumentList '/silent','/stage_only',\"ISRootStagePath=$dir\" -Wait",
         "$MsiPath = Join-Path $dir '{2E8AB41F-8C53-4A6B-B8A0-81746FADD4E0}'",
         "Expand-MsiArchive -Path (Join-Path $MsiPath 'GuitarLab_x64.msi') -DestinationPath $dir",
+        "Remove-Item -Force -LiteralPath (Join-Path $dir 'Guitar Lab Setup.exe')",
         "Remove-Item -Recurse -Force -LiteralPath $MsiPath"
     ],
     "shortcuts": [
