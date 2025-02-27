@@ -80,10 +80,6 @@ checkver.github uses regex '/releases/tag/(?:v|V)?([\\d.]+)', but grief uses '3.
 
 A better jsonpath would be `"jsonpath": "$..assets[?match(@.name,  \".*-win-x86-setup.exe\")].browser_download_url"` but [scoop doesn't seem to support JSONPath matching](https://github.com/ScoopInstaller/Scoop/issues/6266).
 
-### insideclipboard
-
-Similar to nirsoft/insideclipboard, but this persists configuration.
-
 ### jjazzlab
 
 Version is 4.1.0, but download path is "/4.1.0/JJazzLab-4.1.0a-win64-setup.exe".  Use api.github to get browser_download_url with a regex to match version ("4.1.0") and build ("4.1.0a").
@@ -140,10 +136,6 @@ Also, scoop persist requires a file to exist in $dir at install time, or it will
 ### windbg
 
 Derived from 'winget show Microsoft.windbg'.
-
-### wirelessnetworkwatcher
-
-Similar to nirsoft/wnetwatcher, but this persists configuration correctly.
 
 ## Development Notes
 
