@@ -70,10 +70,6 @@ This is a nullsoft installer, which is 7zip-wrapped.
 
 Ctrlr-5.3.201.exe is a nullsoft (7-zip) installer.
 
-### ES-DE
-
-Retrieved project_id from [source code](https://gitlab.com/es-de/emulationstation-de/-/releases)
-
 ### grief
 
 checkver.github uses regex '/releases/tag/(?:v|V)?([\\d.]+)', but grief uses '3.2.3-build-26'.
