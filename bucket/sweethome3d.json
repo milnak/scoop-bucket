@@ -19,12 +19,6 @@
         "New-Item -Path \"$dir\\data\\preferences.xml\" -ItemType File | Out-Null",
         "}"
     ],
-    "bin": [
-        [
-            "SweetHome3D-windows-x64.exe",
-            "SweetHome3D"
-        ]
-    ],
     "shortcuts": [
         [
             "SweetHome3D-windows-x64.exe",
