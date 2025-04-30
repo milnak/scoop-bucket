@@ -12,27 +12,8 @@
             "Umi-OCR"
         ]
     ],
-    "pre_install": [
-        "$data = Join-Path -Path $dir -ChildPath 'UmiOCR-data'",
-        "New-Item -Path $data -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
-        "$path = Join-Path -Path $data -ChildPath '.settings'",
-        "if (!(Test-Path -LiteralPath $path -PathType Leaf)) {",
-        "  \"[Global]`nwindow.closeWin2Hide=false\" | Out-File -Encoding ascii -LiteralPath $path -NoClobber -ErrorAction SilentlyContinue | Out-Null",
-        "}",
-        "$path = Join-Path -Path $data -ChildPath '.pre_settings'",
-        "if (!(Test-Path -LiteralPath $path -PathType Leaf)) {",
-        "  '{\"i18n\":\"en_US\",\"opengl\":\"AA_UseOpenGLES\",\"server_port\":1224,\"last_pid\":0,\"last_ptime\":\"0\"}' | Out-File -Encoding ascii -LiteralPath $path -NoClobber -ErrorAction SilentlyContinue | Out-Null",
-        "}"
-    ],
     "persist": [
-        [
-            "UmiOCR-data/.settings",
-            "settings"
-        ],
-        [
-            "UmiOCR-data/.pre_settings",
-            "pre_settings"
-        ]
+        "UmiOCR-data"
     ],
     "checkver": "github",
     "autoupdate": {
