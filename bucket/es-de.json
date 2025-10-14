@@ -18,8 +18,7 @@
         ]
     ],
     "checkver": {
-        "regex": ">The latest version is <span style=\"font-weight: bold;\">(?<ver>.+?) <\\/span>.*<a href=\"(?<url>https:\\/\\/gitlab\\.com\\/es-de\\/emulationstation-de\\/-\\/package_files\\/210673039\\/download)\" target=\"\" class=\"ButtonPreview_textContainer__t8q7_\" data-testid=\"button\"><span>Windows portable<\\/span><\\/a>",
-        "replace": "${ver}"
+        "regex": ">The latest version is <span style=\"font-weight: bold;\">(?<version>.+?) <\\/span>.*<a href=\"(?<url>https:\\/\\/gitlab\\.com\\/es-de\\/emulationstation-de\\/-\\/package_files\\/210673039\\/download)\" target=\"\" class=\"ButtonPreview_textContainer__t8q7_\" data-testid=\"button\"><span>Windows portable<\\/span><\\/a>"
     },
     "autoupdate": {
         "url": "$matchUrl#ES-DE-x64_Portable.zip"
