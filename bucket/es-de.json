@@ -17,14 +17,22 @@
             "ES-DE (EmulationStation Desktop Edition)"
         ]
     ],
-    "checkver": ">(\\d+\\.\\d+\\.\\d+) </span>",
+    "checkver": {
+        "regex": ">The latest version is <span style=\"font-weight: bold;\">(?<ver>.+?) <\\/span>.*<a href=\"(?<url>https:\\/\\/gitlab\\.com\\/es-de\\/emulationstation-de\\/-\\/package_files\\/210673039\\/download)\" target=\"\" class=\"ButtonPreview_textContainer__t8q7_\" data-testid=\"button\"><span>Windows portable<\\/span><\\/a>",
+        "replace": "${ver}"
+    },
     "autoupdate": {
-        "url": "https://gitlab.com/es-de/emulationstation-de/-/package_files/210673039/download#ES-DE-x64_Portable.zip"
+        "url": "$matchUrl#ES-DE-x64_Portable.zip"
     },
     "notes": [
         "To install RetroArch:",
-        "Choose 'Windows > Download (64bit)' from 'https://www.retroarch.com/?page=platforms'",
+        "Download 'Windows > Download (64bit)' from 'https://www.retroarch.com/?page=platforms'",
         "and extract to $persist_dir\\Emulators",
+        "BIOS folder: $persist_dir\\Emulators\\RetroArch-Win64\\system",
+        "",
+        "To install BigPEmu:",
+        "Download from 'Windows (x64)' from https://www.richwhitehouse.com/jaguar/index.php?content=download",
+        "and extract to $persist_dir\\Emulators\\BigPEmu",
         "",
         "ROMs root folder: $persist_dir\\ROMs",
         "Media root folder: $persist_dir\\downloaded_media"
