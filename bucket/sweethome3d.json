@@ -3,8 +3,8 @@
     "description": "Free interior design software. Draw the plan of your home or office, test furniture layouts and visit the results in 3D.",
     "homepage": "http://www.sweethome3d.com/",
     "license": "GPL-2.0-or-later",
-    "url": "https://downloads.sourceforge.net/project/sweethome3d/SweetHome3D/SweetHome3D-7.5/SweetHome3D-7.5-portable.7z#/dl.7z_",
-    "hash": "sha1:4467d814102a4d29ab905552c9b9645a6fc9a275",
+    "url": "https://downloads.sourceforge.net/project/sweethome3d/SweetHome3D/SweetHome3D-7.5/SweetHome3D-7.5-windows.exe#/dl.7z_",
+    "hash": "sha1:82ee090e29438f746391ca397ed4a2f34d6708a7",
     "installer": {
         "script": [
             "$switches = '-xr!LICENSE -xr!ASSEMBLY_EXCEPTION -xr!ADDITIONAL_LICENSE_INFO -xr!cldr.md'",
@@ -32,10 +32,10 @@
         "data\\textures"
     ],
     "checkver": {
-        "url": "http://www.sweethome3d.com/SweetHome3DUpdates.xml",
-        "regex": "id=\"SweetHome3D#Portable\"\\s+version=\"([\\d.]+)\""
+        "url": "https://www.sweethome3d.com/",
+        "regex": "<span>Windows - </span>version (\\d+\\.\\d+)\\.\\d+ - \\d+ MB\\)"
     },
     "autoupdate": {
-        "url": "https://downloads.sourceforge.net/project/sweethome3d/SweetHome3D/SweetHome3D-$version/SweetHome3D-$version-portable.7z#/dl.7z_"
+        "url": "https://downloads.sourceforge.net/project/sweethome3d/SweetHome3D/SweetHome3D-$version/SweetHome3D-$version-windows.exe#/dl.7z_"
     }
 }
