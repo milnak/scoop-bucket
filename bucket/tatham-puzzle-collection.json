@@ -1,5 +1,5 @@
 {
-    "version": "19.Nov.2025",
+    "version": "790f585",
     "description": "Simon Tatham's Portable Puzzle Collection.",
     "homepage": "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/",
     "license": "MIT",
@@ -169,9 +169,8 @@
         ]
     ],
     "checkver": {
-        "url": "https://git.tartarus.org/?p=simon/puzzles.git",
-        "regex": "<td>last change<\\/td><td><span class=\"datetime\">\\S*, (\\d+) (\\S+) (\\d+) \\d{2}:\\d{2}:\\d{2} \\+\\d{4}<\\/span>",
-        "replace": "${1}.${2}.${3}"
+        "url": "https://git.tartarus.org/?p=simon/puzzles.git;a=commit;h=HEAD",
+        "regex": "\\(parent: <a href=\"\\/\\?p=simon\\/puzzles.git;a=commit;h=[0-9a-fA-F]*\">([0-9a-fA-F]+)<\\/a>"
     },
     "autoupdate": {
         "url": "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles-installer.msi"
