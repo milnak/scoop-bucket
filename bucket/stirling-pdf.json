@@ -1,10 +1,10 @@
 {
-    "version": "1.5.0",
+    "version": "2.0.1",
     "description": "Instantly view, merge, and adjust PDFs.",
     "homepage": "https://stirlingpdf.com",
     "license": "MIT",
-    "url": "https://github.com/Stirling-Tools/Stirling-PDF/releases/download/v1.5.0/Stirling-PDF.jar",
-    "hash": "0e89bea8dc7770e8ceecddd7662ed1bb24c8e370f8fc9397674ecb5341a1b83a",
+    "url": "https://github.com/Stirling-Tools/Stirling-PDF/releases/download/v2.0.1/Stirling-PDF.jar",
+    "hash": "dea127c72f62259758bc57f71ab3dd1af21da8d54298d92479d4ff45710c9d00",
     "persist": [
         "configs",
         "customFiles",
