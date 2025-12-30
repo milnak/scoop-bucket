@@ -1,5 +1,5 @@
 {
-    "version": "7.5",
+    "version": "7.5.17",
     "description": "Free interior design software. Draw the plan of your home or office, test furniture layouts and visit the results in 3D.",
     "homepage": "http://www.sweethome3d.com/",
     "license": "GPL-2.0-or-later",
@@ -33,9 +33,9 @@
     ],
     "checkver": {
         "url": "https://www.sweethome3d.com/",
-        "regex": "<span>Windows - </span>version (\\d+\\.\\d+)\\.\\d+ - \\d+ MB\\)"
+        "regex": "\\(Windows - version (\\d+\\.\\d+\\.\\d+) - \\d+ MB\\)"
     },
     "autoupdate": {
-        "url": "https://downloads.sourceforge.net/project/sweethome3d/SweetHome3D/SweetHome3D-$version/SweetHome3D-$version-windows.exe#/dl.7z_"
+        "url": "https://downloads.sourceforge.net/project/sweethome3d/SweetHome3D/SweetHome3D-$majorVersion.$minorVersion/SweetHome3D-$majorVersion.$minorVersion-windows.exe#/dl.7z_"
     }
 }
