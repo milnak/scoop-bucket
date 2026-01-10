@@ -1,10 +1,10 @@
 {
-    "version": "4.7.0",
+    "version": "4.7.1",
     "description": "USB Information Tool for Windows based on Microsoft \"USBView\" sample application.",
     "homepage": "https://www.uwe-sieber.de/usbtreeview_e.html",
     "license": "Freeware",
     "url": "https://www.uwe-sieber.de/files/UsbTreeView_x64.zip",
-    "hash": "30939ed9e03926630d11093b6c05e01422166a8a1055ebe77c100c9bcf246cf2",
+    "hash": "0894f3742a0496eb9bcbe10aa55a4fbddc914af7746ddef25cddedf0962a1e6d",
     "persist": "UsbTreeView.ini",
     "pre_install": "$manifest.persist | ForEach-Object { New-Item -Path (Join-Path -Path $dir -ChildPath $_) -ItemType File -ErrorAction SilentlyContinue | Out-Null }",
     "shortcuts": [
