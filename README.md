@@ -119,6 +119,10 @@ Contains [persistence bug](https://github.com/ScoopInstaller/Extras/issues/13548
 
 Found this path using dev tools while loading [this](https://www.behringer.com/product.html?modelCode=0722-ABR).
 
+### transcribe
+
+"depends": "versions/innounp-unicode" because versions has latest innounp, unlike main/innounp.
+
 ### umi-ocr
 
 Persists settings, avoiding [known issue](https://github.com/ScoopInstaller/Extras/issues/13707)
