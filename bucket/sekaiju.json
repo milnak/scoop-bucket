@@ -14,7 +14,7 @@
         ]
     ],
     "checkver": {
-        "regex": "■Sekaiju([\\d.]+)"
+        "regex": "Sekaiju([\\d.]+)\\.zip"
     },
     "autoupdate": {
         "url": "https://openmidiproject.opal.ne.jp/dlog.php?filename=Sekaiju$version.zip&width=1366&height=768&depth=24#/dl.7z",
