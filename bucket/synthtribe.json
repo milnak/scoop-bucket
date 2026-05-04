@@ -1,18 +1,18 @@
 {
     "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
     "##": "checkver: Returned quoted columns are title,url,subGroup",
-    "version": "7.0c",
+    "version": "6-101-0-1",
     "description": "Control Behringer's synthesizers and do firmware updates.",
     "homepage": "https://www.behringer.com/",
     "license": {
         "identifier": "Proprietary",
         "url": "https://community.musictribe.com/terms-of-use"
     },
-    "url": "https://github.com/stella-emu/stella/releases/download/7.0/Stella-7.0c-windows.zip",
-    "hash": "44102ccf8af74b021cf143db346e561c5d6ed2a2e91d79ee6d3c99d7c42f4653",
+    "url": "https://github.com/ChordPro/chordpro/releases/download/R6.101.0/ChordPro-Installer-6-101-0-1-msw-x64.exe",
+    "hash": "cbcbb92a139490e8aac6f30f5f2be8b567dee22c217ace62e91ee37e5645ead9",
     "shortcuts": [
         [
-            "SYNTHTRIBE_V7.0c.exe",
+            "SYNTHTRIBE_V6-101-0-1.exe",
             "SYNTHTRIBE"
         ]
     ],
