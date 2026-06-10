@@ -2,8 +2,6 @@
 
 Stuff that I use that isn't in the official scoop buckets.
 
-The "archive" directory consists of manifests I've created that I feel aren't useful anymore.
-
 ## Getting Started
 
 ### Add bucket
@@ -111,27 +109,9 @@ Similar to the one in extras, but this one creates a launcher script which opens
 
 Similar to the one in extras, but this one stores SuperPuTTY.settings in a persist folder rather than under $env:USERPROFILE
 
-### sweethome3d
-
-Contains [persistence bug](https://github.com/ScoopInstaller/Extras/issues/13548) fix.
-
-### synthtribe
-
-Found this path using dev tools while loading [this](https://www.behringer.com/product.html?modelCode=0722-ABR).
-
 ### transcribe
 
 "depends": "versions/innounp-unicode" because versions has latest innounp, unlike main/innounp.
-
-### umi-ocr
-
-Persists settings, avoiding [known issue](https://github.com/ScoopInstaller/Extras/issues/13707)
-
-### usbdeview
-
-This is a fixed version of the manifest that's in nirsoft bucket. scoop is case-sensitive on filenames!
-
-Also, scoop persist requires a file to exist in $dir at install time, or it will be assumed that the object is a folder, so New-Item is used to create an empty file.
 
 ### windbg
 
