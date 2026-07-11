@@ -45,9 +45,19 @@ function Get-GitCommitMessage {
         git.exe status --short
         return
     }
-    $message = git diff --cached --name-only | ForEach-Object { "Updated $_" } | Out-String
-    Write-Host "Commit message:"
-    Write-Host $message
+    $subject = 'modified: '
+    $description = ''
+    $changedFiles = git.exe diff --cached --name-only | Where-Object { $_ -match '\.json$' }
+    foreach ($file in $changedFiles) {
+        $id = $file -replace 'bucket/', '' -replace '.json', ''
+        $subject += "$id "
+        $previous = git.exe show ('{0}:{1}' -f (git.exe log --pretty=format:'%H' -1 $file), $file) | ConvertFrom-Json
+        $current = Get-Content $file | ConvertFrom-Json
+        $description += "{0}: {1} (scoop version is {2})`n" -f $id, $current.version, $previous.version
+
+    }
+    git commit.exe -m "$subject`n`n$description"
+    Write-Host 'Done. Use ''git commit --amend'' to modify the commit if needed.'
 }
 
 # -----------------------------------------------------------------------------
