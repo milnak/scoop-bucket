@@ -38,7 +38,7 @@ param(
     [string]$Dir = './bucket'
 )
 
-function Get-GitCommitMessage {
+function Set-GitCommitMessage {
     git.exe diff --cached --quiet
     if ($LASTEXITCODE -eq 0) {
         Write-Host -Foreground  Yellow "No changes staged for commit."
@@ -47,7 +47,7 @@ function Get-GitCommitMessage {
     }
     $subject = 'modified: '
     $description = ''
-    $changedFiles = git.exe diff --cached --name-only | Where-Object { $_ -match '\.json$' }
+    $changedFiles = git.exe diff --cached --name-only --diff-filter=d | Where-Object { $_ -match '\.json$' }
     foreach ($file in $changedFiles) {
         $id = $file -replace 'bucket/', '' -replace '.json', ''
         $subject += "$id "
@@ -113,7 +113,7 @@ foreach ($UtilityName in $Utility) {
             . "$env:SCOOP_HOME/test/Import-Bucket-Tests.ps1" -BucketPath './bucket'
         }
         'CreateGitCommitMessage' {
-            Get-GitCommitMessage
+            Set-GitCommitMessage
         }
     }
 
