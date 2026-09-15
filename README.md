@@ -109,6 +109,14 @@ Similar to the one in extras, but this one creates a launcher script which opens
 
 Similar to the one in extras, but this one stores SuperPuTTY.settings in a persist folder rather than under $env:USERPROFILE
 
+### tatham-puzzle-collection
+
+Generate the list using:
+
+```PowerShell
+Get-ChildItem -File '*.exe' | ForEach-Object { '[ "{0}", "Simon Tatham''s Portable Puzzle Collection\\{1} - {2}" ],' -f $_.Name, $_.BaseName, (Get-Item -LiteralPath $_).VersionInfo.FileDescription }
+```
+
 ### transcribe
 
 "depends": "versions/innounp-unicode" because versions has latest innounp, unlike main/innounp.
