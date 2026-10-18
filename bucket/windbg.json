@@ -1,10 +1,10 @@
 {
-    "version": "1.2606.22001.0",
+    "version": "1.2610.1001.0",
     "description": "WinDbg is a debugger that can be used to analyze crash dumps, debug live user-mode and kernel-mode code, and examine CPU registers and memory.",
     "homepage": "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/",
     "license": "Proprietary",
-    "url": "https://windbg.download.prss.microsoft.com/dbazure/prod/1-2606-22001-0/windbg.msixbundle#/dl.7z",
-    "hash": "12e63fb884347567bdd35f67f7aad61b26a08f8404553dad6951a10776f7d771",
+    "url": "https://windbg.download.prss.microsoft.com/dbazure/prod/1-2610-1001-0/windbg.msixbundle#/dl.7z",
+    "hash": "4662ae17bc0dc77db987b89cccea32c30058baa06268f861d09e0ab4e4f45c20",
     "installer": {
         "script": [
             "$metadataPath = Join-Path $dir 'AppxMetadata'",
