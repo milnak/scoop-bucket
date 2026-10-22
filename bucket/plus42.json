@@ -1,10 +1,10 @@
 {
-    "version": "1.4",
+    "version": "1.4.1",
     "description": "advanced scientific programmable calculator, based on the HP-42S scientific programmable RPN calculator",
     "homepage": "https://thomasokken.com/plus42/",
     "license": "Freeware",
     "url": "https://thomasokken.com/plus42/download/Plus42Windows.zip",
-    "hash": "d4c45cdd7e6a4761d932f6f370841aba786a609d0769eb77925f2b962d60d420",
+    "hash": "82da80b50c00cbd5d32ccbab8950dd85556bd524c1593a0d65a1e63b6948d584",
     "extract_dir": "Plus42Windows",
     "persist": [
         "state.bin",

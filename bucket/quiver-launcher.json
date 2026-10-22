@@ -1,0 +1,28 @@
+{
+    "version": "3.5.1",
+    "description": "A modern launcher for downloading, installing, and running apps from GitHub and GitLab releases.",
+    "homepage": "https://quiverlauncher.com/",
+    "license": "MIT",
+    "url": "https://github.com/tgeorgiadis/quiver-launcher/releases/download/v3.5.1/QuiverLauncher-win-Portable.zip",
+    "hash": "a19bf3abcfa044acea7bbea80088da02cfe2453c3dd6f8da038912d7a7ede6ef",
+    "pre_install": [
+        "ensure \"$persist_dir\" | Out-Null",
+        "Get-ChildItem \"$persist_dir\\*\" -Include 'apps.json', 'settings.json' | Copy-Item -Destination \"$dir\" -ErrorAction SilentlyContinue"
+    ],
+    "shortcuts": [
+        [
+            "QuiverLauncher.exe",
+            "Quiver Launcher"
+        ]
+    ],
+    "persist": "Apps",
+    "pre_uninstall": "Get-ChildItem \"$dir\\*\" -Include 'apps.json', 'settings.json' | Copy-Item -Destination \"$persist_dir\" -ErrorAction SilentlyContinue -Force",
+    "checkver": {
+        "github": "https://api.github.com/repos/tgeorgiadis/quiver-launcher/releases",
+        "jsonpath": "$[0].tag_name",
+        "regex": "v(.*)"
+    },
+    "autoupdate": {
+        "url": "https://github.com/tgeorgiadis/quiver-launcher/releases/download/v$version/QuiverLauncher-win-Portable.zip"
+    }
+}
