@@ -56,7 +56,9 @@ function Set-GitCommitMessage {
         $description += "{0}: {1} (scoop version is {2})`n" -f $id, $current.version, $previous.version
 
     }
-    git commit.exe -m "$subject`n`n$description"
+    git commit -m "$subject`n`n$description"
+
+    git log -1
     Write-Host 'Done. Use ''git commit --amend'' to modify the commit if needed.'
 }
 
