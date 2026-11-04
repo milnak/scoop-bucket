@@ -39,26 +39,55 @@ param(
 )
 
 function Set-GitCommitMessage {
+    <#
+    .SYNOPSIS
+        Builds a manifest-based commit message and commits all staged changes.
+    .DESCRIPTION
+        Lists staged JSON manifests in the subject and summarizes their working-tree
+        versions alongside versions from their latest commits in the message body.
+        If nothing is staged, displays the repository status and returns.
+    #>
+
+    # Check for staged changes without printing the diff.
     git.exe diff --cached --quiet
+    # Git exits with zero when the index matches HEAD.
     if ($LASTEXITCODE -eq 0) {
         Write-Host -Foreground  Yellow "No changes staged for commit."
+        # Display the concise status of staged, unstaged, and untracked files.
         git.exe status --short
+        # Leave the function without creating a commit.
         return
     }
+
+    # Initialize the commit subject with a change-type prefix.
     $subject = 'modified: '
+
+    # Initialize the commit message body.
     $description = ''
+
+    # List staged JSON paths, excluding deleted files.
     $changedFiles = git.exe diff --cached --name-only --diff-filter=d | Where-Object { $_ -match '\.json$' }
+
+    # Build message entries for each staged JSON file.
     foreach ($file in $changedFiles) {
+        # Derive the manifest ID by removing the bucket prefix and JSON suffix.
         $id = $file -replace 'bucket/', '' -replace '.json', ''
+        # Append the manifest ID and a separating space to the subject.
         $subject += "$id "
+        # Read and parse the file from the latest commit that changed its path.
         $previous = git.exe show ('{0}:{1}' -f (git.exe log --pretty=format:'%H' -1 $file), $file) | ConvertFrom-Json
+        # Read and parse the working-tree file, which may differ from the staged copy.
         $current = Get-Content $file | ConvertFrom-Json
+        # Append the manifest ID, working-tree version, and previous version to the body.
         $description += "{0}: {1} (scoop version is {2})`n" -f $id, $current.version, $previous.version
 
     }
+    # Commit all staged changes using the subject and body separated by a blank line.
     git commit -m "$subject`n`n$description"
 
+    # Display the latest commit.
     git log -1
+
     Write-Host 'Done. Use ''git commit --amend'' to modify the commit if needed.'
 }
 
